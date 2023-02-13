@@ -1,2 +1,2 @@
-# nautobot-ui
-A collection of React compents for the Nautobot UI system.
+# Nautobot UI
+A collection of React components for the Nautobot UI system.
