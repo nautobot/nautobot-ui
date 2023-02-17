@@ -4,7 +4,7 @@ import React from 'react';
 
 export interface IconProps
   extends Omit<HTMLChakraProps<'svg'>, 'orientation'>,
-    ThemingProps {}
+    ThemingProps<'Icon'> {}
 
 const Icon = forwardRef<IconProps, 'svg'>(
   ({ colorScheme, orientation, size, styleConfig, variant, ...rest }, ref) => {

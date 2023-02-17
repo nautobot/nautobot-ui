@@ -6,7 +6,7 @@ export default defineStyleConfig({
   },
 
   defaultProps: {
-    size: 'H1',
+    size: 'H2',
   },
 
   sizes: {

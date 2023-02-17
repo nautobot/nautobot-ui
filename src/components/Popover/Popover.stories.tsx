@@ -18,8 +18,8 @@ const Story: ComponentMeta<typeof Popover> = {
 
 export default Story;
 
-const Template: ComponentStory<typeof Button> = () => (
-  <Popover>
+const Template: ComponentStory<typeof Popover> = (args) => (
+  <Popover {...args}>
     <PopoverTrigger>
       <Button>Open</Button>
     </PopoverTrigger>
@@ -51,7 +51,10 @@ export const Basic = Template.bind({});
 Basic.argTypes = {
   variant: {
     defaultValue: 'docked',
-    options: ['docked', 'docked+1', 'docked+2'],
-    control: { type: 'radio' },
+    type: {
+      name: 'enum',
+      required: false,
+      value: ['docked', 'docked+1', 'docked+2'],
+    },
   },
 };

@@ -18,7 +18,7 @@ export default {
   },
 
   H3: {
-    fontSize: 'normal',
+    fontSize: 'md',
     fontWeight: 'medium',
     lineHeight: 'normal',
   },

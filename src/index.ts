@@ -1,43 +1,37 @@
 export {
   Box,
-  Button,
   chakra,
   ColorModeScript,
   Divider,
   Flex,
+  Grid,
   Heading,
+  Tab,
+  TabList,
+  TabPanel,
+  TabPanels,
+  Tabs,
   Text,
+  useDisclosure,
 } from '@chakra-ui/react';
 export type {
   BoxProps,
-  ButtonProps,
   ColorModeScriptProps,
   DividerProps,
   FlexProps,
+  GridProps,
   HeadingProps,
   TextProps,
+  TabProps,
+  TabListProps,
+  TabPanelProps,
+  TabPanelsProps,
+  TabsProps,
+  UseDisclosureProps,
 } from '@chakra-ui/react';
 
-export { default as Icon } from './components/Icon';
-export type { IconProps } from './components/Icon';
-export {
-  Popover,
-  PopoverAnchor,
-  PopoverArrow,
-  PopoverBody,
-  PopoverCloseButton,
-  PopoverContent,
-  PopoverHeader,
-  PopoverTrigger,
-} from './components/Popover';
-export type {
-  PopoverProps,
-  PopoverArrowProps,
-  PopoverBodyProps,
-  PopoverCloseButtonProps,
-  PopoverContentProps,
-  PopoverHeaderProps,
-} from './components/Popover';
+export * from './components';
+export * from './icons';
 export { default as NautobotUIProvider } from './NautobotUIProvider';
 export type { NautobotUIProviderProps } from './NautobotUIProvider';
 export { default as theme } from './theme';
