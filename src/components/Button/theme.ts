@@ -34,7 +34,6 @@ export default defineStyleConfig({
   baseStyle: {
     borderRadius: 'md',
     fontWeight: 'normal',
-    gap: 'xs',
     lineHeight: 'normal',
     justifyContent: 'center',
     transitionDuration: 'default',

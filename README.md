@@ -12,8 +12,8 @@ npm i nautobot/nautobot-ui @chakra-ui/react @emotion/react @emotion/styled frame
 ```
 
 > `nautobot/nautobot-ui` package is coming from a Git repository instead of npm
-registry, so commits, branches and tags can be used for its versioning. You can
-read more about it at:
+> registry, so commits, branches and tags can be used for its versioning. You can
+> read more about it at:
 > [Git URLs as Dependencies](https://docs.npmjs.com/cli/v9/configuring-npm/package-json#git-urls-as-dependencies).
 
 After installing, import `NautobotUIProvider` from `nautobot-ui` package and
@@ -22,11 +22,7 @@ with it, wrap the root or other component at the top of application hierarchy:
 ```tsx
 import { NautobotUIProvider } from 'nautobot-ui';
 
-const App = () => (
-  <NautobotUIProvider>
-    ...
-  </NautobotUIProvider>
-);
+const App = () => <NautobotUIProvider>...</NautobotUIProvider>;
 ```
 
 If you're building an application with any of the major JavaScript frameworks,
@@ -37,8 +33,8 @@ is follow the instructions at:
 `ChakraBaseProvider`!**
 
 > `NautobotUIProvider` is built on top of `ChakraBaseProvider` and allows
-extending  its theme with `theme` prop. Basically, anything `ChakraBaseProvider`
-can do, `NautobotUIProvider` can do too!
+> extending its theme with `theme` prop. Basically, anything `ChakraBaseProvider`
+> can do, `NautobotUIProvider` can do too!
 
 ### TypeScript
 

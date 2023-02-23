@@ -3,30 +3,42 @@ import React from 'react';
 
 import { Button, Flex } from '../..';
 import type { ButtonProps } from '../..';
+import * as icons from '../../icons';
 
 const Story: ComponentMeta<typeof Button> = {
   argTypes: {
     isDisabled: {
       defaultValue: false,
-      control: 'boolean',
-    },
-    isList: {
-      table: {
-        disable: true,
+      type: {
+        name: 'boolean',
+        required: false,
       },
     },
   },
   component: Button,
+  parameters: {
+    controls: {
+      include: ['isDisabled', 'leftIcon', 'rightIcon', 'size', 'variant'],
+    },
+  },
   title: 'Button',
 };
 
 export default Story;
 
 const Template: ComponentStory<typeof Button> = ({
-  isList,
+  leftIcon,
+  rightIcon,
   ...args
-}: ButtonProps & { isList?: boolean }) =>
-  isList ? (
+}: ButtonProps & { isList?: boolean }) => {
+  const isList =
+    args.variant === 'list' ||
+    args.variant === 'listCritical' ||
+    args.variant === 'listSecondary';
+  const LeftIcon = icons[leftIcon as unknown as keyof typeof icons];
+  const RightIcon = icons[rightIcon as unknown as keyof typeof icons];
+
+  return isList ? (
     <Flex
       background="white-0"
       borderRadius="sm"
@@ -40,21 +52,28 @@ const Template: ComponentStory<typeof Button> = ({
       <Button {...args} />
     </Flex>
   ) : (
-    <Button {...args} />
+    <Button
+      {...(LeftIcon ? { leftIcon: <LeftIcon /> } : undefined)}
+      {...(RightIcon ? { rightIcon: <RightIcon /> } : undefined)}
+      {...args}
+    />
   );
+};
 
 export const Basic = Template.bind({});
 
 Basic.argTypes = {
   size: {
     defaultValue: 'md',
-    options: ['md'],
-    control: { type: 'radio' },
+    type: { name: 'enum', value: ['md'], required: false },
   },
   variant: {
     defaultValue: 'primaryAction',
-    options: ['primaryAction', 'primary', 'secondary', 'criticalAction'],
-    control: { type: 'radio' },
+    type: {
+      name: 'enum',
+      value: ['primaryAction', 'primary', 'secondary', 'criticalAction'],
+      required: false,
+    },
   },
 };
 
@@ -67,17 +86,35 @@ export const List = Template.bind({});
 List.argTypes = {
   size: {
     defaultValue: 'sm',
-    options: ['sm'],
-    control: { type: 'radio' },
+    type: { name: 'enum', value: ['sm'], required: false },
   },
   variant: {
     defaultValue: 'list',
-    options: ['list', 'listSecondary', 'listCritical'],
-    control: { type: 'radio' },
+    type: {
+      name: 'enum',
+      value: ['list', 'listSecondary', 'listCritical'],
+      required: false,
+    },
   },
 };
 
 List.args = {
   children: 'Example',
-  isList: true,
+};
+
+export const Icon = Template.bind({});
+
+Icon.argTypes = {
+  leftIcon: {
+    defaultValue: '',
+    type: { name: 'enum', value: ['', ...Object.keys(icons)], required: false },
+  },
+  rightIcon: {
+    defaultValue: Object.keys(icons)[0],
+    type: { name: 'enum', value: ['', ...Object.keys(icons)], required: false },
+  },
+};
+
+Icon.args = {
+  children: 'Example',
 };

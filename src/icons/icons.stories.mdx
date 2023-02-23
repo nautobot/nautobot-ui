@@ -1,0 +1,16 @@
+import { Meta, Title, IconGallery, IconItem } from '@storybook/addon-docs/';
+
+import { NautobotUIProvider } from '..';
+import * as icons from '.';
+
+<Meta title="Icons" />
+
+<NautobotUIProvider>
+  <IconGallery>
+    {Object.entries(icons).map(([iconName, Icon]) => (
+      <IconItem key={iconName} name={iconName}>
+        <Icon name={iconName} />
+      </IconItem>
+    ))}
+  </IconGallery>
+</NautobotUIProvider>

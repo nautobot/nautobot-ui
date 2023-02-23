@@ -11,6 +11,22 @@ export default defineStyleConfig({
     width: 20,
   },
 
+  defaultProps: {
+    size: 'md',
+  },
+
+  sizes: {
+    sm: {
+      height: 20,
+      width: 20,
+    },
+
+    md: {
+      height: 24,
+      width: 24,
+    },
+  },
+
   variants: {
     'rotate-45': {
       transform: 'rotate(-45deg)',
