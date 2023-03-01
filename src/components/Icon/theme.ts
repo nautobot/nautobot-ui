@@ -16,6 +16,11 @@ export default defineStyleConfig({
   },
 
   sizes: {
+    xs: {
+      height: 14,
+      width: 14,
+    },
+
     sm: {
       height: 20,
       width: 20,

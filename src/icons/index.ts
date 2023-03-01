@@ -3,6 +3,7 @@ export { default as ArrowLeftIcon } from './ArrowLeftIcon';
 export { default as ArrowRightIcon } from './ArrowRightIcon';
 export { default as ArrowUpIcon } from './ArrowUpIcon';
 export { default as BinIcon } from './BinIcon';
+export { default as CheckIcon } from './CheckIcon';
 export { default as CloneIcon } from './CloneIcon';
 export { default as CloseIcon } from './CloseIcon';
 export { default as DragIcon } from './DragIcon';

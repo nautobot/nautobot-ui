@@ -4,8 +4,12 @@ import React from 'react';
 
 export interface ButtonProps extends ChakraButtonProps {}
 
-const Button = forwardRef<ButtonProps, 'button'>((props, ref) => (
-  <ChakraButton ref={ref} iconSpacing="xs" {...props} />
-));
+const Button = forwardRef<ButtonProps, 'button'>(
+  ({ children, ...rest }, ref) => (
+    <ChakraButton ref={ref} iconSpacing={children ? 'xs' : 0} {...rest}>
+      {children}
+    </ChakraButton>
+  )
+);
 
 export default Button;

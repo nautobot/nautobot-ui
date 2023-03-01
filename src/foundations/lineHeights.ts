@@ -1,5 +1,5 @@
 export default {
-  short: '16px',
+  short: '18px',
   normal: '24px',
   tall: '40px',
 };
