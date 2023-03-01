@@ -53,6 +53,13 @@ export default defineStyleConfig({
   },
 
   sizes: {
+    xs: {
+      fontSize: 'md',
+      height: 'auto',
+      minWidth: 0,
+      padding: 0,
+    },
+
     sm: {
       fontSize: 'md',
       height: 34,
@@ -123,6 +130,14 @@ export default defineStyleConfig({
       _hover: {
         background: 'blue-10%',
         boxShadow: 'button_secondary',
+      },
+    },
+
+    table: {
+      color: 'gray-4',
+
+      _hover: {
+        color: 'blue-1',
       },
     },
   },

@@ -13,7 +13,7 @@ import {
 
 const Story: ComponentMeta<typeof Popover> = {
   component: Popover,
-  title: 'Popover',
+  title: 'Components/Popover',
 };
 
 export default Story;

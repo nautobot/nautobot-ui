@@ -1,0 +1,25 @@
+<Meta title="Components/Table/Introduction" />
+
+# Table Introduction
+
+There are two approaches to building tables with `nautobot-ui`:
+
+  1. [**With helpers (Table Renderer)**](/story/table--table-renderer), using
+  `TableRenderer` component and `useTableRenderer` hook.
+  > **Recommended for standard use cases**. To be used when there is a standard
+  > table to create. Existing helpers  already implement common logic, helping
+  > to reduce boilerplate code. At the same time they are generic and extensible
+  > enough to enable handling standard use cases.
+
+  > _This approach forces using `@tanstack/react-table` library implemented in
+  > `useTableRenderer` hook._
+
+
+  2. [**From scratch (Basic)**](/story/table--basic), using basic components as
+  building blocks.
+  > **Recommended for very simple or custom use cases**. Useful when a
+  > non-standard table use case is required. Allows setting virtually anything
+  > in table component, because it requires using each table element separately.
+  > Should be chosen when there is a custom table UI or behavior to build.
+
+  > _This approach doesn't force using `@tanstack/react-table` library._

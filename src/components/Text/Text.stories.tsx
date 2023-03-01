@@ -6,7 +6,7 @@ import { colors, fontWeights } from '../../foundations';
 
 const Story: ComponentMeta<typeof Text> = {
   component: Text,
-  title: 'Text',
+  title: 'Components/Text',
 };
 
 export default Story;

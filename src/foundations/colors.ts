@@ -1,5 +1,4 @@
 export default {
-  BG: '#F6F6F6',
   'black-0': '#1A1A1A',
   'blue-1': '#007DFF',
   'blue-10%': '#E5F2FF',

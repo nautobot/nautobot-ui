@@ -21,7 +21,7 @@ const Story: ComponentMeta<typeof Button> = {
       include: ['isDisabled', 'leftIcon', 'rightIcon', 'size', 'variant'],
     },
   },
-  title: 'Button',
+  title: 'Components/Button',
 };
 
 export default Story;
@@ -30,7 +30,7 @@ const Template: ComponentStory<typeof Button> = ({
   leftIcon,
   rightIcon,
   ...args
-}: ButtonProps & { isList?: boolean }) => {
+}: ButtonProps) => {
   const isList =
     args.variant === 'list' ||
     args.variant === 'listCritical' ||
@@ -117,4 +117,21 @@ Icon.argTypes = {
 
 Icon.args = {
   children: 'Example',
+};
+
+export const TableAction = Template.bind({});
+
+TableAction.argTypes = {
+  size: {
+    defaultValue: 'xs',
+    type: { name: 'enum', value: ['xs'], required: false },
+  },
+  variant: {
+    defaultValue: 'table',
+    type: { name: 'enum', value: ['table'], required: false },
+  },
+  leftIcon: {
+    defaultValue: Object.keys(icons).find((icon) => icon === 'MeatballsIcon'),
+    type: { name: 'enum', value: ['', ...Object.keys(icons)], required: false },
+  },
 };

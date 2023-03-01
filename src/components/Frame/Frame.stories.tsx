@@ -6,7 +6,7 @@ import type { FrameProps } from '../..';
 
 const Story: ComponentMeta<typeof Frame> = {
   component: Frame,
-  title: 'Frame',
+  title: 'Components/Frame',
 };
 
 export default Story;

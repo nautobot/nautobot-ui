@@ -15,7 +15,7 @@ import {
 
 const Story: ComponentMeta<typeof Modal> = {
   component: Modal,
-  title: 'Modal',
+  title: 'Components/Modal',
 };
 
 export default Story;

@@ -32,7 +32,7 @@ export default {
   P2: {
     fontSize: 'sm',
     fontWeight: 'normal',
-    lineHeight: 'short',
+    lineHeight: 'normal',
   },
 
   P3: {
