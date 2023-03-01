@@ -22,7 +22,7 @@ import type { UseTableRendererProps } from '../..';
 
 const Story: ComponentMeta<typeof Table> = {
   component: TableRendererComponent,
-  title: 'Table',
+  title: 'Components/Table',
 };
 
 export default Story;

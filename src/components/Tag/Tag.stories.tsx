@@ -6,7 +6,7 @@ import type { TagProps } from '../..';
 
 const Story: ComponentMeta<typeof Tag> = {
   component: Tag,
-  title: 'Tag',
+  title: 'Components/Tag',
 };
 
 export default Story;

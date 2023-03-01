@@ -5,7 +5,7 @@ import { Divider, Flex } from '../..';
 
 const Story: ComponentMeta<typeof Divider> = {
   component: Divider,
-  title: 'Divider',
+  title: 'Components/Divider',
 };
 
 export default Story;

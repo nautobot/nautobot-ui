@@ -5,7 +5,7 @@ import { Checkbox } from '../..';
 
 const Story: ComponentMeta<typeof Checkbox> = {
   component: Checkbox,
-  title: 'Checkbox',
+  title: 'Components/Checkbox',
 };
 
 export default Story;

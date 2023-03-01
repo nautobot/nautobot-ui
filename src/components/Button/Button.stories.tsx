@@ -21,7 +21,7 @@ const Story: ComponentMeta<typeof Button> = {
       include: ['isDisabled', 'leftIcon', 'rightIcon', 'size', 'variant'],
     },
   },
-  title: 'Button',
+  title: 'Components/Button',
 };
 
 export default Story;

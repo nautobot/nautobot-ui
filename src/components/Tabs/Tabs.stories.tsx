@@ -13,7 +13,7 @@ import {
 
 const Story: ComponentMeta<typeof Tabs> = {
   component: Tabs,
-  title: 'Tabs',
+  title: 'Components/Tabs',
 };
 
 export default Story;
