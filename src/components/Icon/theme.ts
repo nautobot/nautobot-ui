@@ -16,9 +16,14 @@ export default defineStyleConfig({
   },
 
   sizes: {
-    xs: {
+    '2xs': {
       height: 14,
       width: 14,
+    },
+
+    xs: {
+      height: 16,
+      width: 16,
     },
 
     sm: {
@@ -29,6 +34,11 @@ export default defineStyleConfig({
     md: {
       height: 24,
       width: 24,
+    },
+
+    lg: {
+      height: 28,
+      width: 28,
     },
   },
 

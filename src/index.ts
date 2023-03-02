@@ -28,6 +28,7 @@ export type {
   TabPanelsProps,
   TabsProps,
   UseDisclosureProps,
+  UseDisclosureReturn,
 } from '@chakra-ui/react';
 
 export * from './components';

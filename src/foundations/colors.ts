@@ -13,4 +13,12 @@ export default {
   'red-1': '#E01F1F',
   'red-10%': '#FCE8E8',
   'white-0': '#FFFFFF',
+
+  /*
+   * These colors are defined separately, because they don't officially exist in
+   * the Nautobot UI design system. However, they are used in sidebar styles.
+   */
+  'navy-0': '#121A25',
+  'navy-1': '#151E2A',
+  'navy-2': '#192332',
 };
