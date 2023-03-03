@@ -20,6 +20,10 @@ Basic.argTypes = {
     defaultValue: 'P1',
     type: { name: 'enum', value: ['P1', 'P2', 'P3'], required: false },
   },
+  variant: {
+    defaultValue: 'default',
+    type: { name: 'enum', value: ['default', 'Mono1'], required: false },
+  },
   fontWeight: {
     defaultValue: 'normal',
     type: { name: 'enum', value: Object.keys(fontWeights), required: false },

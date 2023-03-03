@@ -7,6 +7,7 @@ export default defineStyleConfig({
 
   defaultProps: {
     size: 'P1',
+    variant: 'P',
   },
 
   sizes: {
@@ -20,6 +21,14 @@ export default defineStyleConfig({
 
     P3: {
       textStyle: 'P3',
+    },
+  },
+
+  variants: {
+    P: {},
+
+    Mono1: {
+      textStyle: 'Mono1',
     },
   },
 });

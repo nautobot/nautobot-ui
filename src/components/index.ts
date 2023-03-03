@@ -29,6 +29,25 @@ export type { FrameProps } from './Frame';
 export { default as Icon } from './Icon';
 export type { IconProps } from './Icon';
 export {
+  Input,
+  InputAddon,
+  InputGroup,
+  InputLeftAddon,
+  InputLeftElement,
+  InputRightAddon,
+  InputRightElement,
+} from './Input';
+export type {
+  InputAddonProps,
+  InputLeftAddonProps,
+  InputLeftElementProps,
+  InputProps,
+  InputRightAddonProps,
+  InputRightElementProps,
+} from './Input';
+export { default as Link } from './Link';
+export type { LinkProps } from './Link';
+export {
   Modal,
   ModalBody,
   ModalCloseButton,
@@ -82,6 +101,10 @@ export type {
   SidebarContextValue,
   SidebarProps,
 } from './Sidebar';
+export { default as StatusIndicator } from './StatusIndicator';
+export type { StatusIndicatorProps } from './StatusIndicator';
+export { default as Switch } from './Switch';
+export type { SwitchProps } from './Switch';
 export {
   createColumnHelper,
   flexRender,
