@@ -1,5 +1,6 @@
 export default {
   Mono1: {
+    fontFamily: 'mono',
     fontSize: 'lg',
     fontWeight: 'normal',
     lineHeight: 'normal',

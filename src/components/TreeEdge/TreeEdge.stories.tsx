@@ -29,9 +29,7 @@ const Template: ComponentStory<typeof TreeEdge> = (args) =>
       ].map((variant) => (
         <Flex key={variant} alignItems="center" gap="sm" height="44px">
           <TreeEdge variant={variant} {...args} />
-          <Text fontFamily="mono" textStyle="Mono1">
-            {`variant="${variant}"`}
-          </Text>
+          <Text variant="Mono1">{`variant="${variant}"`}</Text>
         </Flex>
       ))}
     </>

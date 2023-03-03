@@ -1,6 +1,16 @@
 import { Description } from '@storybook/addon-docs/blocks';
+
 import README from '../README.md';
 
 <Meta title="Documentation/README" />
 
-<Description>{README}</Description>
+<Description>
+  {
+    /*
+     * Replace `shell` code blocks with blocks without language declared,
+     * because for an unknown reason Storybook renders them incorrectly as
+     * `'[object Object] [object Object]'`.
+     */
+    README.replace(/```shell/g, '```')
+  }
+</Description>

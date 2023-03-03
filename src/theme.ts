@@ -7,9 +7,13 @@ import Divider from './components/Divider/theme';
 import Frame from './components/Frame/theme';
 import Heading from './components/Heading/theme';
 import Icon from './components/Icon/theme';
+import Input from './components/Input/theme';
+import Link from './components/Link/theme';
 import Modal from './components/Modal/theme';
 import Popover from './components/Popover/theme';
 import Sidebar from './components/Sidebar/theme';
+import StatusIndicator from './components/StatusIndicator/theme';
+import Switch from './components/Switch/theme';
 import Table from './components/Table/theme';
 import Tabs from './components/Tabs/theme';
 import Tag from './components/Tag/theme';
@@ -27,9 +31,13 @@ export default extendBaseTheme({
     Frame,
     Heading,
     Icon,
+    Input,
+    Link,
     Modal,
     Popover,
     Sidebar,
+    StatusIndicator,
+    Switch,
     Table,
     Tabs,
     Tag,

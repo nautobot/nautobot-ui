@@ -21,12 +21,12 @@ export type {
   FlexProps,
   GridProps,
   HeadingProps,
-  TextProps,
   TabProps,
   TabListProps,
   TabPanelProps,
   TabPanelsProps,
   TabsProps,
+  TextProps,
   UseDisclosureProps,
   UseDisclosureReturn,
 } from '@chakra-ui/react';
