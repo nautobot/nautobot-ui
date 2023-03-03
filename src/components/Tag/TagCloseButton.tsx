@@ -8,7 +8,7 @@ export interface TagCloseButtonProps extends ChakraTagCloseButtonProps {}
 
 const TagCloseButton = (props: TagCloseButtonProps) => (
   <ChakraTagCloseButton {...props}>
-    <CloseIcon size="xs" />
+    <CloseIcon size="2xs" />
   </ChakraTagCloseButton>
 );
 

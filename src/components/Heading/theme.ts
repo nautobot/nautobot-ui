@@ -7,6 +7,7 @@ export default defineStyleConfig({
 
   defaultProps: {
     size: 'H2',
+    variant: 'default',
   },
 
   sizes: {
@@ -20,6 +21,19 @@ export default defineStyleConfig({
 
     H3: {
       textStyle: 'H3',
+    },
+  },
+
+  variants: {
+    default: {},
+
+    sidebar: {
+      alignItems: 'center',
+      color: 'white-0',
+      display: 'flex',
+      gap: 'sm',
+      paddingX: 'md',
+      paddingY: 'sm',
     },
   },
 });

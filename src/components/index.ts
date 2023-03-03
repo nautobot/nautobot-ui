@@ -1,3 +1,25 @@
+export {
+  Accordion,
+  AccordionButton,
+  AccordionIcon,
+  AccordionItem,
+  AccordionPanel,
+  useAccordion,
+  useAccordionContext,
+  useAccordionItem,
+  useAccordionItemState,
+} from './Accordion';
+export type {
+  AccordionButtonProps,
+  AccordionIconProps,
+  AccordionItemProps,
+  AccordionPanelProps,
+  AccordionProps,
+  UseAccordionProps,
+  UseAccordionReturn,
+  UseAccordionItemProps,
+  UseAccordionItemReturn,
+} from './Accordion';
 export { default as Button } from './Button';
 export type { ButtonProps } from './Button';
 export { Checkbox, CheckboxIcon } from './Checkbox';
@@ -42,6 +64,24 @@ export type {
   PopoverContentProps,
   PopoverHeaderProps,
 } from './Popover';
+export {
+  Sidebar,
+  SidebarButton,
+  SidebarCollapseButton,
+  SidebarContainer,
+  SidebarContent,
+  SidebarContext,
+  SidebarContextConsumer,
+  SidebarContextProvider,
+} from './Sidebar';
+export type {
+  SidebarButtonProps,
+  SidebarCollapseButtonProps,
+  SidebarContainerProps,
+  SidebarContentProps,
+  SidebarContextValue,
+  SidebarProps,
+} from './Sidebar';
 export {
   createColumnHelper,
   flexRender,
@@ -95,3 +135,5 @@ export {
   TagRightIcon,
 } from './Tag';
 export type { TagCloseButtonProps, TagLabelProps, TagProps } from './Tag';
+export { TreeEdge } from './TreeEdge';
+export type { TreeEdgeProps } from './TreeEdge';
