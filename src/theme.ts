@@ -4,6 +4,11 @@ import Accordion from './components/Accordion/theme';
 import Button from './components/Button/theme';
 import Checkbox from './components/Checkbox/theme';
 import Divider from './components/Divider/theme';
+import Form, {
+  FormContainer,
+  FormError,
+  FormLabel,
+} from './components/Form/theme';
 import Frame from './components/Frame/theme';
 import Heading from './components/Heading/theme';
 import Icon from './components/Icon/theme';
@@ -11,6 +16,8 @@ import Input from './components/Input/theme';
 import Link from './components/Link/theme';
 import Modal from './components/Modal/theme';
 import Popover from './components/Popover/theme';
+import Progress from './components/Progress/theme';
+import Select from './components/Select/theme';
 import Sidebar from './components/Sidebar/theme';
 import StatusIndicator from './components/StatusIndicator/theme';
 import Switch from './components/Switch/theme';
@@ -28,6 +35,10 @@ export default extendBaseTheme({
     Button,
     Checkbox,
     Divider,
+    Form,
+    FormContainer,
+    FormError,
+    FormLabel,
     Frame,
     Heading,
     Icon,
@@ -35,6 +46,8 @@ export default extendBaseTheme({
     Link,
     Modal,
     Popover,
+    Progress,
+    Select,
     Sidebar,
     StatusIndicator,
     Switch,
