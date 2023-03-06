@@ -24,6 +24,20 @@ export { default as Button } from './Button';
 export type { ButtonProps } from './Button';
 export { Checkbox, CheckboxIcon } from './Checkbox';
 export type { CheckboxProps, CheckboxIconProps } from './Checkbox';
+export {
+  FormContainer,
+  FormControl,
+  FormErrorMessage,
+  FormHelperText,
+  FormLabel,
+} from './Form';
+export type {
+  FormContainerProps,
+  FormControlProps,
+  FormErrorMessageProps,
+  FormHelperTextProps,
+  FormLabelProps,
+} from './Form';
 export { default as Frame } from './Frame';
 export type { FrameProps } from './Frame';
 export { default as Icon } from './Icon';
@@ -83,6 +97,8 @@ export type {
   PopoverContentProps,
   PopoverHeaderProps,
 } from './Popover';
+export { default as Select } from './Select';
+export type { SelectOption, SelectProps } from './Select';
 export {
   Sidebar,
   SidebarButton,

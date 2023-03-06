@@ -10,7 +10,7 @@ const $chakraSpaceSm = cssVar('chakra-space-sm');
 export default defineMultiStyleConfig({
   baseStyle: definePartsStyle({
     field: {
-      borderColor: 'gray-2',
+      borderColor: 'gray-1',
       borderRadius: 'md',
       borderStyle: 'solid',
       borderWidth: 1,
