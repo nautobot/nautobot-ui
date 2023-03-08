@@ -96,6 +96,11 @@ const Template: ComponentStory<(props: Props) => ReactElement> = ({
         name: 'My Nautobot',
         state: 'busy',
       },
+      {
+        description: "This is someone else's Nautobot instance",
+        name: "Someone else's Nautobot",
+        state: 'ready',
+      },
     ],
     []
   );
@@ -146,6 +151,15 @@ const Template: ComponentStory<(props: Props) => ReactElement> = ({
                 <Td>
                   <Tag variant="action">
                     <TagLabel>Busy</TagLabel>
+                  </Tag>
+                </Td>
+              </Tr>
+              <Tr>
+                <Td>Someone else&apos;s Nautobot</Td>
+                <Td>This is someone else&apos;s Nautobot instance</Td>
+                <Td>
+                  <Tag variant="success">
+                    <TagLabel>Ready</TagLabel>
                   </Tag>
                 </Td>
               </Tr>
