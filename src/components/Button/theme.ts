@@ -6,6 +6,11 @@ const variant = {
     borderRadius: 0,
     justifyContent: 'flex-start',
 
+    _focusVisible: {
+      background: 'blue-10%',
+      color: 'blue-1',
+    },
+
     _hover: {
       background: 'blue-10%',
       color: 'blue-1',
@@ -22,6 +27,10 @@ const variant = {
 
     _disabled: {
       background: 'gray-1',
+    },
+
+    _focusVisible: {
+      boxShadow: 'button',
     },
 
     _hover: {
@@ -87,6 +96,11 @@ export default defineStyleConfig({
       ...variant.list,
       color: 'red-1',
 
+      _focusVisible: {
+        ...variant.list._focusVisible,
+        color: 'red-1',
+      },
+
       _hover: {
         ...variant.list._hover,
         color: 'red-1',
@@ -96,6 +110,11 @@ export default defineStyleConfig({
     listSecondary: {
       ...variant.list,
       color: 'gray-3',
+
+      _focusVisible: {
+        ...variant.list._focusVisible,
+        color: 'gray-3',
+      },
 
       _hover: {
         ...variant.list._hover,
@@ -127,6 +146,11 @@ export default defineStyleConfig({
         color: 'gray-2',
       },
 
+      _focusVisible: {
+        background: 'blue-10%',
+        boxShadow: 'button_secondary',
+      },
+
       _hover: {
         background: 'blue-10%',
         boxShadow: 'button_secondary',
@@ -135,6 +159,14 @@ export default defineStyleConfig({
 
     table: {
       color: 'gray-4',
+
+      _disabled: {
+        color: 'gray-2',
+      },
+
+      _focusVisible: {
+        color: 'blue-1',
+      },
 
       _hover: {
         color: 'blue-1',

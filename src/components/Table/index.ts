@@ -1,7 +1,6 @@
 export {
   Table,
   TableCaption,
-  Tbody,
   Td,
   Tfoot,
   Th,
@@ -9,7 +8,6 @@ export {
   Tr,
 } from '@chakra-ui/react';
 export type {
-  TableBodyProps,
   TableCaptionProps,
   TableCellProps,
   TableColumnHeaderProps,
@@ -44,6 +42,8 @@ export { default as TableContainer } from './TableContainer';
 export type { TableContainerProps } from './TableContainer';
 export { default as TableRenderer } from './TableRenderer';
 export type { TableRendererProps } from './TableRenderer';
+export { default as Tbody } from './Tbody';
+export type { TableBodyProps } from './Tbody';
 export type {
   NautobotUIColumnMeta as ColumnMeta,
   NautobotUITableMeta as TableMeta,

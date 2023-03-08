@@ -30,6 +30,7 @@ const getColumnDefActionMenu = <Datum extends object, TValue = any>({
       <PopoverTrigger>
         <Button
           _active={{ background: 'blue-10%' }}
+          _focusVisible={{ background: 'blue-10%' }}
           _hover={{ background: 'blue-10%' }}
           borderRadius={0}
           color="blue-1"
