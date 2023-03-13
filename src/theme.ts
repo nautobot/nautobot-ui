@@ -14,6 +14,7 @@ import Heading from './components/Heading/theme';
 import Icon from './components/Icon/theme';
 import Input from './components/Input/theme';
 import Link from './components/Link/theme';
+import Menu from './components/Menu/theme';
 import Modal from './components/Modal/theme';
 import Popover from './components/Popover/theme';
 import Progress from './components/Progress/theme';
@@ -44,6 +45,7 @@ export default extendBaseTheme({
     Icon,
     Input,
     Link,
+    Menu,
     Modal,
     Popover,
     Progress,

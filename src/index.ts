@@ -1,5 +1,6 @@
 export {
   Box,
+  ButtonGroup,
   chakra,
   ColorModeScript,
   Divider,
@@ -18,6 +19,7 @@ export {
 } from '@chakra-ui/react';
 export type {
   BoxProps,
+  ButtonGroupProps,
   ColorModeScriptProps,
   DividerProps,
   FlexProps,
