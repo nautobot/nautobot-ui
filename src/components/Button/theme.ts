@@ -63,21 +63,21 @@ export default defineStyleConfig({
 
   sizes: {
     xs: {
-      fontSize: 'md',
+      fontSize: 'sm',
       height: 'auto',
       minWidth: 0,
       padding: 0,
     },
 
     sm: {
-      fontSize: 'md',
+      fontSize: 'sm',
       height: 34,
       minWidth: 0,
       paddingX: 'md',
     },
 
     md: {
-      fontSize: 'md',
+      fontSize: 'sm',
       height: 40,
       minWidth: 0,
       paddingX: 'md',
