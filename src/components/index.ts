@@ -62,6 +62,26 @@ export type {
 export { default as Link } from './Link';
 export type { LinkProps } from './Link';
 export {
+  Menu,
+  MenuButton,
+  MenuDivider,
+  MenuGroup,
+  MenuItem,
+  MenuItemOption,
+  MenuList,
+  MenuOptionGroup,
+} from './Menu';
+export type {
+  MenuButtonProps,
+  MenuDividerProps,
+  MenuGroupProps,
+  MenuItemOptionProps,
+  MenuItemProps,
+  MenuListProps,
+  MenuOptionGroupProps,
+  MenuProps,
+} from './Menu';
+export {
   Modal,
   ModalBody,
   ModalCloseButton,
