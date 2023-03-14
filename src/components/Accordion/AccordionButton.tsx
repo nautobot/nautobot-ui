@@ -40,7 +40,7 @@ const AccordionButton = ({
         ? undefined
         : {
             sx: {
-              '&:focus, &:hover': {
+              '&:focus-visible, &:hover': {
                 'svg:last-child': { color: 'currentcolor' },
               },
             },

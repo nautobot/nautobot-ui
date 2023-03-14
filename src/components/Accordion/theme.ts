@@ -10,19 +10,19 @@ const $chakraSpaceSm = cssVar('chakra-space-sm');
 const variant = {
   sidebar: {
     button: {
-      _hover: {
-        color: 'orange-0',
-      },
-
-      _focus: {
-        color: 'orange-0',
-      },
-
       border: 'none',
       borderRadius: 0,
       fontSize: 'sm',
       paddingX: 'md',
       paddingY: 0,
+
+      _focusVisible: {
+        color: 'orange-0',
+      },
+
+      _hover: {
+        color: 'orange-0',
+      },
     },
 
     container: {
@@ -47,14 +47,6 @@ const variant = {
 export default defineMultiStyleConfig({
   baseStyle: definePartsStyle({
     button: {
-      _focus: {
-        background: 'blue-10%',
-      },
-
-      _hover: {
-        background: 'blue-10%',
-      },
-
       background: 'white-0',
       borderColor: 'gray-1',
       borderRadius: 'md',
@@ -69,6 +61,14 @@ export default defineMultiStyleConfig({
       transitionDuration: 'default',
       transitionProperty: 'background, border-radius, color',
       transitionTimingFunction: 'default',
+
+      _focusVisible: {
+        background: 'blue-10%',
+      },
+
+      _hover: {
+        background: 'blue-10%',
+      },
     },
 
     container: {
@@ -111,19 +111,19 @@ export default defineMultiStyleConfig({
       ...variant.sidebar,
       button: {
         ...variant.sidebar.button,
+        background: 'navy-0',
+        color: 'gray-4',
+        textTransform: 'uppercase',
+
+        _focusVisible: {
+          ...variant.sidebar.button._focusVisible,
+          background: 'navy-1',
+        },
+
         _hover: {
           ...variant.sidebar.button._hover,
           background: 'navy-1',
         },
-
-        _focus: {
-          ...variant.sidebar.button._focus,
-          background: 'navy-1',
-        },
-
-        background: 'navy-0',
-        color: 'gray-4',
-        textTransform: 'uppercase',
       },
 
       icon: {
@@ -141,20 +141,20 @@ export default defineMultiStyleConfig({
       ...variant.sidebar,
       button: {
         ...variant.sidebar.button,
-        _hover: {
-          ...variant.sidebar.button._hover,
-          background: 'navy-2',
-        },
-
-        _focus: {
-          ...variant.sidebar.button._focus,
-          background: 'navy-2',
-        },
-
         background: 'navy-1',
         color: 'white-0',
         fontWeight: 'normal',
         gap: 'xs',
+
+        _focusVisible: {
+          ...variant.sidebar.button._focusVisible,
+          background: 'navy-2',
+        },
+
+        _hover: {
+          ...variant.sidebar.button._hover,
+          background: 'navy-2',
+        },
       },
 
       icon: {

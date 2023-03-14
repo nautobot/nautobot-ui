@@ -28,26 +28,26 @@ const SidebarButton = ({
     width="full"
     {...[
       {
-        _focus: { background: 'navy-1', color: 'orange-0' },
-        _hover: { background: 'navy-1', color: 'orange-0' },
         background: 'navy-0',
         height: 34,
         fontSize: 'md',
+        _focusVisible: { background: 'navy-1', color: 'orange-0' },
+        _hover: { background: 'navy-1', color: 'orange-0' },
       },
       {
-        _focus: { background: 'navy-2', color: 'orange-0' },
-        _hover: { background: 'navy-2', color: 'orange-0' },
         background: 'navy-1',
         height: 44,
         fontSize: 'sm',
+        _focusVisible: { background: 'navy-2', color: 'orange-0' },
+        _hover: { background: 'navy-2', color: 'orange-0' },
       },
       {
-        _focus: { color: 'orange-0' },
-        _hover: { color: 'orange-0' },
         background: 'navy-2',
         paddingLeft: 'xl',
         height: 44,
         fontSize: 'sm',
+        _focusVisible: { color: 'orange-0' },
+        _hover: { color: 'orange-0' },
       },
     ][Number(level)]}
     {...rest}
