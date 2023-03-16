@@ -14,4 +14,6 @@ export interface PopoverProps extends ChakraPopoverProps {}
  */
 const Popover = (props: PopoverProps) => <ChakraPopover isLazy {...props} />;
 
+Popover.displayName = 'Popover';
+
 export default Popover;

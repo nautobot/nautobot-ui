@@ -1,4 +1,4 @@
-import { useMultiStyleConfig } from '@chakra-ui/react';
+import { forwardRef, useMultiStyleConfig } from '@chakra-ui/react';
 import type { ThemingProps } from '@chakra-ui/react';
 import React from 'react';
 
@@ -9,16 +9,20 @@ export interface FrameProps extends BoxProps, ThemingProps<'Frame'> {
   contentProps?: FlexProps;
 }
 
-const Frame = ({ children, contentProps, variant, ...rest }: FrameProps) => {
-  const { frame, content } = useMultiStyleConfig('Frame', { variant });
+const Frame = forwardRef<FrameProps, 'div'>(
+  ({ children, contentProps, variant, ...rest }, ref) => {
+    const { frame, content } = useMultiStyleConfig('Frame', { variant });
 
-  return (
-    <Box __css={frame} {...rest}>
-      <Flex __css={content} {...contentProps}>
-        {children}
-      </Flex>
-    </Box>
-  );
-};
+    return (
+      <Box ref={ref} __css={frame} {...rest}>
+        <Flex __css={content} {...contentProps}>
+          {children}
+        </Flex>
+      </Box>
+    );
+  }
+);
+
+Frame.displayName = 'Frame';
 
 export default Frame;

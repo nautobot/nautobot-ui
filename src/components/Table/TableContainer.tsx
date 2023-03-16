@@ -1,11 +1,15 @@
-import { TableContainer as ChakraTableContainer } from '@chakra-ui/react';
+import {
+  forwardRef,
+  TableContainer as ChakraTableContainer,
+} from '@chakra-ui/react';
 import type { TableContainerProps as ChakraTableContainerProps } from '@chakra-ui/react';
 import React from 'react';
 
 export interface TableContainerProps extends ChakraTableContainerProps {}
 
-const TableContainer = (props: TableContainerProps) => (
+const TableContainer = forwardRef<TableContainerProps, 'div'>((props, ref) => (
   <ChakraTableContainer
+    ref={ref}
     borderColor="gray-1"
     borderRadius="md"
     borderStyle="solid"
@@ -14,6 +18,8 @@ const TableContainer = (props: TableContainerProps) => (
     width="full"
     {...props}
   />
-);
+));
+
+TableContainer.displayName = 'TableContainer';
 
 export default TableContainer;

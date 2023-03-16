@@ -1,20 +1,8 @@
-export {
-  Table,
-  TableCaption,
-  Td,
-  Tfoot,
-  Th,
-  Thead,
-  Tr,
-} from '@chakra-ui/react';
+export { Table, TableCaption, Tfoot } from '@chakra-ui/react';
 export type {
   TableCaptionProps,
-  TableCellProps,
-  TableColumnHeaderProps,
   TableFooterProps,
-  TableHeadProps,
   TableProps,
-  TableRowProps,
 } from '@chakra-ui/react';
 export {
   createColumnHelper,
@@ -44,6 +32,14 @@ export { default as TableRenderer } from './TableRenderer';
 export type { TableRendererProps } from './TableRenderer';
 export { default as Tbody } from './Tbody';
 export type { TableBodyProps } from './Tbody';
+export { default as Td } from './Td';
+export type { TableCellProps } from './Td';
+export { default as Th } from './Th';
+export type { TableColumnHeaderProps } from './Th';
+export { default as Thead } from './Thead';
+export type { TableHeadProps } from './Thead';
+export { default as Tr } from './Tr';
+export type { TableRowProps } from './Tr';
 export type {
   NautobotUIColumnMeta as ColumnMeta,
   NautobotUITableMeta as TableMeta,

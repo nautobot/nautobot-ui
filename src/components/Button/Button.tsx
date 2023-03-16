@@ -30,4 +30,6 @@ const Button = forwardRef<ButtonProps, 'button'>(
   )
 );
 
+Button.displayName = 'Button';
+
 export default Button;

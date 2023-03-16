@@ -1,5 +1,6 @@
 import {
   AccordionButton as ChakraAccordionButton,
+  forwardRef,
   useAccordionItemState,
   useAccordionStyles,
 } from '@chakra-ui/react';
@@ -15,57 +16,57 @@ export interface AccordionButtonProps extends ChakraAccordionButtonProps {
   isLast?: boolean;
 }
 
-const AccordionButton = ({
-  children,
-  isFirst,
-  isLast,
-  ...rest
-}: AccordionButtonProps) => {
-  const { isOpen } = useAccordionItemState();
+const AccordionButton = forwardRef<AccordionButtonProps, 'button'>(
+  ({ children, isFirst, isLast, ...rest }, ref) => {
+    const { isOpen } = useAccordionItemState();
 
-  const {
-    button: { background },
-  } = useAccordionStyles();
+    const {
+      button: { background },
+    } = useAccordionStyles();
 
-  // Quack! 🦆
-  const isVariantDefault = background === theme.baseStyle?.button.background;
-  const isVariantSidebarLevel0 =
-    background === theme.variants?.sidebarLevel0.button.background;
-  const isVariantSidebarLevel1 =
-    background === theme.variants?.sidebarLevel1.button.background;
+    // Quack! 🦆
+    const isVariantDefault = background === theme.baseStyle?.button.background;
+    const isVariantSidebarLevel0 =
+      background === theme.variants?.sidebarLevel0.button.background;
+    const isVariantSidebarLevel1 =
+      background === theme.variants?.sidebarLevel1.button.background;
 
-  return (
-    <ChakraAccordionButton
-      {...(isVariantDefault
-        ? undefined
-        : {
-            sx: {
-              '&:focus-visible, &:hover': {
-                'svg:last-child': { color: 'currentcolor' },
+    return (
+      <ChakraAccordionButton
+        ref={ref}
+        {...(isVariantDefault
+          ? undefined
+          : {
+              sx: {
+                '&:focus-visible, &:hover': {
+                  'svg:last-child': { color: 'currentcolor' },
+                },
               },
-            },
-          })}
-      {...(isOpen
-        ? {
-            ...(isVariantDefault
-              ? { background: 'blue-10%', borderBottomRadius: 0 }
-              : {
-                  background: isVariantSidebarLevel0 ? 'navy-1' : 'navy-2',
-                  color: 'orange-0',
-                }),
-          }
-        : undefined)}
-      {...rest}
-    >
-      {isVariantSidebarLevel0 ? <NtcThumbnailIcon /> : null}
-      {isVariantSidebarLevel1 ? (
-        <TreeEdge
-          variant={`sidebar${isFirst ? 'First' : isLast ? 'Last' : ''}`}
-        />
-      ) : null}
-      {children}
-    </ChakraAccordionButton>
-  );
-};
+            })}
+        {...(isOpen
+          ? {
+              ...(isVariantDefault
+                ? { background: 'blue-10%', borderBottomRadius: 0 }
+                : {
+                    background: isVariantSidebarLevel0 ? 'navy-1' : 'navy-2',
+                    color: 'orange-0',
+                  }),
+            }
+          : undefined)}
+        {...rest}
+      >
+        {isVariantSidebarLevel0 ? <NtcThumbnailIcon /> : null}
+        {isVariantSidebarLevel1 ? (
+          <TreeEdge
+            variant={`sidebar${isFirst ? 'First' : isLast ? 'Last' : ''}`}
+          />
+        ) : null}
+        {children}
+      </ChakraAccordionButton>
+    );
+  }
+);
+
+AccordionButton.displayName = 'AccordionButton';
 
 export default AccordionButton;

@@ -48,4 +48,6 @@ const Select = forwardRef<SelectProps, 'select'>(
   )
 );
 
+Select.displayName = 'Select';
+
 export default Select;

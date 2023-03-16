@@ -1,10 +1,12 @@
+import { chakra, forwardRef } from '@chakra-ui/react';
 import React from 'react';
 
-import { chakra, Icon } from '..';
+import { Icon } from '..';
 import type { IconProps } from '..';
 
-const NtcThumbnailIcon = (props: IconProps) => (
+const NtcThumbnailIcon = forwardRef<IconProps, 'svg'>((props, ref) => (
   <Icon
+    ref={ref}
     fill="none"
     height="20"
     viewBox="0 0 17 20"
@@ -25,6 +27,8 @@ const NtcThumbnailIcon = (props: IconProps) => (
       fill="orange-0"
     />
   </Icon>
-);
+));
+
+NtcThumbnailIcon.displayName = 'NtcThumbnailIcon';
 
 export default NtcThumbnailIcon;

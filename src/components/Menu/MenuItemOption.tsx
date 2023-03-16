@@ -86,6 +86,8 @@ const MenuItemOption = forwardRef<MenuItemOptionProps, 'button'>(
   }
 );
 
+MenuItemOption.displayName = 'MenuItemOption';
+
 MenuItemOption.id = 'MenuItemOption';
 
 export default MenuItemOption;

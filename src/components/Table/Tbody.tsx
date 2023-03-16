@@ -27,4 +27,6 @@ const Tbody = forwardRef<TableBodyProps, 'tbody'>(({ sx, ...rest }, ref) => (
   />
 ));
 
+Tbody.displayName = 'Tbody';
+
 export default Tbody;

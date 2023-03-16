@@ -1,10 +1,12 @@
+import { chakra, forwardRef } from '@chakra-ui/react';
 import React from 'react';
 
-import { chakra, Icon } from '..';
+import { Icon } from '..';
 import type { IconProps } from '..';
 
-const SortAscendingIcon = (props: IconProps) => (
+const SortAscendingIcon = forwardRef<IconProps, 'svg'>((props, ref) => (
   <Icon
+    ref={ref}
     fill="none"
     viewBox="0 0 24 24"
     xmlns="http://www.w3.org/2000/svg"
@@ -25,6 +27,8 @@ const SortAscendingIcon = (props: IconProps) => (
       strokeWidth="1.5"
     />
   </Icon>
-);
+));
+
+SortAscendingIcon.displayName = 'SortAscendingIcon';
 
 export default SortAscendingIcon;

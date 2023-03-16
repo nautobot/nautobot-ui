@@ -10,4 +10,6 @@ const Checkbox = forwardRef<CheckboxProps, 'input'>((props, ref) => (
   <ChakraCheckbox ref={ref} data-group="" icon={<CheckboxIcon />} {...props} />
 ));
 
+Checkbox.displayName = 'Checkbox';
+
 export default Checkbox;

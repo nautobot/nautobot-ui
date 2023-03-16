@@ -32,4 +32,6 @@ const MenuItem = forwardRef<MenuItemProps, 'button'>(
   )
 );
 
+MenuItem.displayName = 'MenuItem';
+
 export default MenuItem;
