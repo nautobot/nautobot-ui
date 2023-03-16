@@ -43,4 +43,6 @@ const CheckboxIcon = ({ isChecked, isIndeterminate }: CheckboxIconProps) => (
   </>
 );
 
+CheckboxIcon.displayName = 'CheckboxIcon';
+
 export default CheckboxIcon;

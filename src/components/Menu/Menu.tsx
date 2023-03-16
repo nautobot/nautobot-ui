@@ -10,4 +10,6 @@ export interface MenuProps extends ChakraMenuProps {}
  */
 const Menu = (props: MenuProps) => <ChakraMenu isLazy {...props} />;
 
+Menu.displayName = 'Menu';
+
 export default Menu;

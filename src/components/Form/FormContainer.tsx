@@ -1,6 +1,7 @@
 import { chakra, forwardRef, useStyleConfig } from '@chakra-ui/react';
 import type { ChakraProps, ThemingProps } from '@chakra-ui/react';
-import React, { DetailedHTMLProps, FormHTMLAttributes } from 'react';
+import React from 'react';
+import type { DetailedHTMLProps, FormHTMLAttributes } from 'react';
 
 type HTMLFormElementProps = DetailedHTMLProps<
   FormHTMLAttributes<HTMLFormElement>,
@@ -25,5 +26,7 @@ const FormContainer = forwardRef<FormContainerProps, 'form'>(
     return <chakra.form ref={ref} __css={style} as="div" {...rest} />;
   }
 );
+
+FormContainer.displayName = 'FormContainer';
 
 export default FormContainer;

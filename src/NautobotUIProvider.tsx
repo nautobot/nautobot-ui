@@ -15,4 +15,6 @@ const NautobotUIProvider = ({
   return <ChakraBaseProvider theme={themeMerged} {...rest} />;
 };
 
+NautobotUIProvider.displayName = 'NautobotUIProvider';
+
 export default NautobotUIProvider;

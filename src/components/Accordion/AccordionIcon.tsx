@@ -1,4 +1,8 @@
-import { useAccordionItemState, useAccordionStyles } from '@chakra-ui/react';
+import {
+  forwardRef,
+  useAccordionItemState,
+  useAccordionStyles,
+} from '@chakra-ui/react';
 import type {
   AccordionIconProps as ChakraAccordionIconProps,
   ThemingProps,
@@ -11,7 +15,7 @@ import theme from './theme';
 
 export interface AccordionIconProps extends ChakraAccordionIconProps {}
 
-const AccordionIcon = (props: AccordionIconProps) => {
+const AccordionIcon = forwardRef<AccordionIconProps, 'svg'>((props, ref) => {
   const { isOpen } = useAccordionItemState();
 
   const {
@@ -24,6 +28,7 @@ const AccordionIcon = (props: AccordionIconProps) => {
 
   return (
     <ArrowDownIcon
+      ref={ref}
       marginLeft="auto"
       {...(icon as ThemingProps<'Icon'>)}
       {...(isOpen
@@ -36,6 +41,8 @@ const AccordionIcon = (props: AccordionIconProps) => {
       {...props}
     />
   );
-};
+});
+
+AccordionIcon.displayName = 'AccordionIcon';
 
 export default AccordionIcon;

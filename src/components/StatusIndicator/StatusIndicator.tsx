@@ -1,11 +1,11 @@
 import {
   Box,
   cssVar,
+  forwardRef,
   keyframes,
-  ThemingProps,
   useStyleConfig,
 } from '@chakra-ui/react';
-import type { BoxProps } from '@chakra-ui/react';
+import type { BoxProps, ThemingProps } from '@chakra-ui/react';
 import React from 'react';
 
 export interface StatusIndicatorProps
@@ -28,35 +28,35 @@ const keyframesBlink = keyframes`
   to { opacity: 0.4; }
 `;
 
-const StatusIndicator = ({
-  breathe,
-  colorScheme,
-  orientation,
-  size,
-  styleConfig,
-  variant,
-  ...rest
-}: StatusIndicatorProps) => {
-  const style = useStyleConfig('StatusIndicator', {
-    colorScheme,
-    orientation,
-    size,
-    styleConfig,
-    variant,
-  });
+const StatusIndicator = forwardRef<StatusIndicatorProps, 'span'>(
+  (
+    { breathe, colorScheme, orientation, size, styleConfig, variant, ...rest },
+    ref
+  ) => {
+    const style = useStyleConfig('StatusIndicator', {
+      colorScheme,
+      orientation,
+      size,
+      styleConfig,
+      variant,
+    });
 
-  return (
-    <Box
-      __css={style}
-      as="span"
-      {...(breathe
-        ? {
-            animation: `${keyframesBlink} 800ms ${$chakraTransitionEasingDefault.reference} infinite alternate`,
-          }
-        : undefined)}
-      {...rest}
-    />
-  );
-};
+    return (
+      <Box
+        ref={ref}
+        __css={style}
+        as="span"
+        {...(breathe
+          ? {
+              animation: `${keyframesBlink} 800ms ${$chakraTransitionEasingDefault.reference} infinite alternate`,
+            }
+          : undefined)}
+        {...rest}
+      />
+    );
+  }
+);
+
+StatusIndicator.displayName = 'StatusIndicator';
 
 export default StatusIndicator;

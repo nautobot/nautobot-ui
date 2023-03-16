@@ -133,4 +133,6 @@ const TableRenderer = <Datum extends object>({
   </TableContainer>
 );
 
+TableRenderer.displayName = 'TableRenderer';
+
 export default TableRenderer;
