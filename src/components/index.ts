@@ -194,5 +194,7 @@ export {
   TagRightIcon,
 } from './Tag';
 export type { TagCloseButtonProps, TagLabelProps, TagProps } from './Tag';
+export { default as Tooltip } from './Tooltip';
+export type { TooltipProps } from './Tooltip';
 export { TreeEdge } from './TreeEdge';
 export type { TreeEdgeProps } from './TreeEdge';

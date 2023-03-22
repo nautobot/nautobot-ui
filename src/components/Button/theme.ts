@@ -1,4 +1,6 @@
-import { defineStyleConfig } from '@chakra-ui/react';
+import { calc, cssVar, defineStyleConfig } from '@chakra-ui/react';
+
+const $chakraSpaceMd = cssVar('chakra-space-md');
 
 const variant = {
   list: {
@@ -135,6 +137,7 @@ export default defineStyleConfig({
       borderStyle: 'solid',
       borderWidth: 1,
       color: 'blue-1',
+      paddingX: calc.subtract($chakraSpaceMd.reference, '1px'),
 
       _active: {
         background: 'blue-10%',
