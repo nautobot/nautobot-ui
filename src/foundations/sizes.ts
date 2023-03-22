@@ -3,6 +3,7 @@ export default {
   half: '50%',
   full: '100%',
   0: 0,
+  6: '6px',
   8: '8px',
   10: '10px',
   14: '14px',

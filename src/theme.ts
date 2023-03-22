@@ -26,6 +26,7 @@ import Table from './components/Table/theme';
 import Tabs from './components/Tabs/theme';
 import Tag from './components/Tag/theme';
 import Text from './components/Text/theme';
+import Tooltip from './components/Tooltip/theme';
 import TreeEdge from './components/TreeEdge/theme';
 import * as foundations from './foundations';
 
@@ -57,6 +58,7 @@ export default extendBaseTheme({
     Tabs,
     Tag,
     Text,
+    Tooltip,
     TreeEdge,
   },
 });
