@@ -20,6 +20,13 @@ export type {
   UseAccordionItemProps,
   UseAccordionItemReturn,
 } from './Accordion';
+export { Breadcrumb, Breadcrumbs, BreadcrumbsDivider } from './Breadcrumbs';
+export type {
+  BreadcrumbProps,
+  BreadcrumbType,
+  BreadcrumbsProps,
+  BreadcrumbsDividerProps,
+} from './Breadcrumbs';
 export { default as Button } from './Button';
 export type { ButtonProps } from './Button';
 export { Checkbox, CheckboxIcon } from './Checkbox';
