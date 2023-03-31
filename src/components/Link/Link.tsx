@@ -15,6 +15,7 @@ export const Link = forwardRef<LinkProps, 'a'>(
         ? cloneElement(leftIcon, {
             size: 'sm',
             ...(children || rightIcon ? { marginRight: 'xs' } : undefined),
+            ...leftIcon.props,
           })
         : null}
 
@@ -24,6 +25,7 @@ export const Link = forwardRef<LinkProps, 'a'>(
         ? cloneElement(rightIcon, {
             size: 'sm',
             ...(children ? { marginLeft: 'xs' } : undefined),
+            ...rightIcon.props,
           })
         : null}
     </ChakraLink>

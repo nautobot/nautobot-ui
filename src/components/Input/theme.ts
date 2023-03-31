@@ -5,18 +5,17 @@ const { definePartsStyle, defineMultiStyleConfig } =
   createMultiStyleConfigHelpers(inputAnatomy.keys);
 
 const $chakraSpace8 = cssVar('chakra-space-8');
+const $chakraSpace12 = cssVar('chakra-space-12');
 const $chakraSpaceSm = cssVar('chakra-space-sm');
 
 export default defineMultiStyleConfig({
   baseStyle: definePartsStyle({
     field: {
-      borderColor: 'gray-1',
       borderRadius: 'md',
       borderStyle: 'solid',
       borderWidth: 1,
       color: 'black-0',
       paddingX: calc.subtract($chakraSpaceSm.reference, '1px'),
-      paddingY: calc.subtract($chakraSpace8.reference, '1px'),
       textStyle: 'P1',
       transitionDuration: 'default',
       transitionProperty: 'background, border, box-shadow, color',
@@ -65,7 +64,6 @@ export default defineMultiStyleConfig({
 
     element: {
       color: 'gray-2',
-      marginY: 8,
       marginX: 'sm',
     },
   }),
@@ -76,10 +74,38 @@ export default defineMultiStyleConfig({
   },
 
   sizes: {
-    md: definePartsStyle({}),
+    md: definePartsStyle({
+      element: {
+        marginY: 8,
+      },
+
+      field: {
+        paddingY: calc.subtract($chakraSpace8.reference, '1px'),
+      },
+    }),
+
+    lg: definePartsStyle({
+      element: {
+        marginY: 12,
+      },
+
+      field: {
+        paddingY: calc.subtract($chakraSpace12.reference, '1px'),
+      },
+    }),
   },
 
   variants: {
-    default: definePartsStyle({}),
+    default: definePartsStyle({
+      field: {
+        borderColor: 'gray-1',
+      },
+    }),
+
+    navbar: definePartsStyle({
+      field: {
+        borderColor: 'white-0',
+      },
+    }),
   },
 });
