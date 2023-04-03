@@ -1,6 +1,6 @@
 import { Flex, forwardRef, useMultiStyleConfig } from '@chakra-ui/react';
 import type { FlexProps, SystemProps, ThemingProps } from '@chakra-ui/react';
-import React, { Children, cloneElement } from 'react';
+import React, { Children, cloneElement, Fragment } from 'react';
 import type { ReactElement } from 'react';
 
 import type Breadcrumb from './Breadcrumb';
@@ -38,7 +38,7 @@ const Breadcrumbs = forwardRef<BreadcrumbsProps, 'div'>(
               const isLast = index === Children.count(children) - 1;
 
               return (
-                <>
+                <Fragment key={child.key ?? index}>
                   {cloneElement(child, {
                     _styles: {
                       ...(breadcrumb as SystemProps),
@@ -55,7 +55,7 @@ const Breadcrumbs = forwardRef<BreadcrumbsProps, 'div'>(
                     ...child.props,
                   })}
                   {isLast ? null : <BreadcrumbsDivider __css={divider} />}
-                </>
+                </Fragment>
               );
             })
           : null}

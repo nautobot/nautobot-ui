@@ -3,7 +3,6 @@ import React from 'react';
 import type { Key, ReactNode } from 'react';
 
 import {
-  ArrowDownIcon,
   Button,
   Link,
   Menu,
@@ -13,6 +12,8 @@ import {
   Text,
 } from '../..';
 import type { LinkProps, MenuProps, MenuItemProps, TextProps } from '../..';
+
+import BreadcrumbMenuArrowDownIcon from './BreadcrumbMenuArrowDownIcon';
 
 export type BreadcrumbType = 'custom' | 'link' | 'menu' | 'text';
 
@@ -55,7 +56,7 @@ const Breadcrumb: ComponentWithAs<'div', BreadcrumbProps> = (
             {..._styles}
             {...(isDisabled
               ? { isDisabled: true }
-              : { rightIcon: <ArrowDownIcon size="xs" /> })}
+              : { rightIcon: <BreadcrumbMenuArrowDownIcon /> })}
           >
             {children}
           </MenuButton>
