@@ -1,6 +1,7 @@
 import { extendBaseTheme } from '@chakra-ui/react';
 
 import Accordion from './components/Accordion/theme';
+import Breadcrumbs from './components/Breadcrumbs/theme';
 import Button from './components/Button/theme';
 import Checkbox from './components/Checkbox/theme';
 import Divider from './components/Divider/theme';
@@ -34,6 +35,7 @@ export default extendBaseTheme({
   ...foundations,
   components: {
     Accordion,
+    Breadcrumbs,
     Button,
     Checkbox,
     Divider,
