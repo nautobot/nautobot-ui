@@ -106,6 +106,8 @@ export type {
   ModalHeaderProps,
   ModalOverlayProps,
 } from './Modal';
+export { default as NautobotGridLayout } from './NautobotGridLayout';
+export type { NautobotGridLayoutProps } from './NautobotGridLayout';
 export {
   Popover,
   PopoverAnchor,
