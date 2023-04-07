@@ -10,7 +10,9 @@ export const StoryContent = forwardRef<FlexProps, 'div'>((props, ref) => (
     align="center"
     background="blue-10%"
     borderRadius="md"
+    height="full"
     justify="center"
+    width="full"
     {...props}
   >
     <Heading as="h1" color="blue-1" size="H1" textTransform="uppercase">

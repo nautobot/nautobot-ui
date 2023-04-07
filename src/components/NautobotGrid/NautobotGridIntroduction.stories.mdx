@@ -1,4 +1,4 @@
-import { NautobotGrid, NautobotUIProvider } from '../..';
+import { NautobotGrid, NautobotGridItem, NautobotUIProvider } from '../..';
 
 import { StoryContent } from './utils';
 
@@ -37,6 +37,18 @@ passed as primitive values or passed as more complex config objects:
   ```typescript
   <NautobotGrid columns={{ span: '2 1 1' }}>...</NautobotGrid>
   ```
+
+While `NautobotGrid` accepts any `ReactElement` as children, `NautobotGridItem`
+implements additional API to overwrite parent's cell span if needed, with
+`colSpan` and `rowSpan` props. For example:
+
+```typescript
+<NautobotGrid>
+  <NautobotGridItem>...<NautobotGridItem>
+  <NautobotGridItem>...<NautobotGridItem>
+  <NautobotGridItem colSpan="2">...<NautobotGridItem>
+</NautobotGrid>
+```
 
 ## Examples
 
@@ -119,5 +131,39 @@ Now, with all the theory laid out, let's see some practical examples:
 ```typescript
 <NautobotGrid columns="1 1 1 1 4" rows={{ count: 4, span: '1 1 1 1 3' }}>
   ...
+</NautobotGrid>
+```
+
+### Complex grid with `NautobotGridItem`s
+
+<NautobotUIProvider>
+  <NautobotGrid minHeight={300} rows={{ count: 4 }}>
+    <NautobotGridItem>
+      <StoryContent />
+    </NautobotGridItem>
+    <NautobotGridItem>
+      <StoryContent />
+    </NautobotGridItem>
+    <NautobotGridItem>
+      <StoryContent />
+    </NautobotGridItem>
+    <NautobotGridItem>
+      <StoryContent />
+    </NautobotGridItem>
+    <NautobotGridItem colSpan="4" rowSpan="3">
+      <StoryContent />
+    </NautobotGridItem>
+  </NautobotGrid>
+</NautobotUIProvider>
+
+```typescript
+<NautobotGrid rows={{ count: 4 }}>
+  <NautobotGridItem>...</NautobotGridItem>
+  <NautobotGridItem>...</NautobotGridItem>
+  <NautobotGridItem>...</NautobotGridItem>
+  <NautobotGridItem>...</NautobotGridItem>
+  <NautobotGridItem colSpan="4" rowSpan="3">
+    ...
+  </NautobotGridItem>
 </NautobotGrid>
 ```

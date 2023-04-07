@@ -1,8 +1,8 @@
 import type { ComponentMeta, ComponentStory } from '@storybook/react';
 import React from 'react';
 
-import { NautobotGrid } from '../..';
-import type { NautobotGridProps } from '../..';
+import { NautobotGrid, NautobotGridItem } from '../..';
+import type { NautobotGridItemProps, NautobotGridProps } from '../..';
 
 import { StoryContent } from './utils';
 
@@ -16,12 +16,19 @@ export default Story;
 
 const Template: ComponentStory<
   (
-    props: NautobotGridProps & { childrenCount?: number }
+    props: NautobotGridProps & {
+      children?: NautobotGridItemProps[];
+      childrenCount?: number;
+    }
   ) => ReturnType<typeof NautobotGrid>
 > = ({
+  children,
   childrenCount,
   ...args
-}: NautobotGridProps & { childrenCount?: number }) => (
+}: NautobotGridProps & {
+  children?: NautobotGridItemProps[];
+  childrenCount?: number;
+}) => (
   <>
     <style>
       {`#root {
@@ -32,11 +39,15 @@ const Template: ComponentStory<
     </style>
 
     <NautobotGrid background="white-0" {...args}>
-      {Array.from({
-        length: childrenCount ?? 0,
-      }).map((_, index) => (
-        <StoryContent key={index} />
-      ))}
+      {children
+        ? children.map((props, index) => (
+            <NautobotGridItem key={index} {...props}>
+              <StoryContent />
+            </NautobotGridItem>
+          ))
+        : Array.from({
+            length: childrenCount ?? 0,
+          }).map((_, index) => <StoryContent key={index} />)}
     </NautobotGrid>
   </>
 );
@@ -81,6 +92,41 @@ WithCellConfig.argTypes = {
 
   rows: {
     defaultValue: {},
+    type: {
+      name: 'object',
+      required: false,
+      value: { count: { name: 'number' }, span: { name: 'string' } },
+    },
+  },
+};
+
+export const WithNautobotGridItems = Template.bind({});
+
+WithNautobotGridItems.argTypes = {
+  children: {
+    defaultValue: [{}, {}, {}, {}, { colSpan: 4, rowSpan: 3 }],
+    name: 'children (Storybook only, for demonstration purposes.)',
+    type: {
+      name: 'array',
+      required: false,
+      value: {
+        name: 'object',
+        value: { colSpan: { name: 'number' }, rowSpan: { name: 'number' } },
+      },
+    },
+  },
+
+  columns: {
+    defaultValue: {},
+    type: {
+      name: 'object',
+      required: false,
+      value: { count: { name: 'number' }, span: { name: 'string' } },
+    },
+  },
+
+  rows: {
+    defaultValue: { count: 4 },
     type: {
       name: 'object',
       required: false,
