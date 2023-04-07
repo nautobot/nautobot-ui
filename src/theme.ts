@@ -17,7 +17,7 @@ import Input from './components/Input/theme';
 import Link from './components/Link/theme';
 import Menu from './components/Menu/theme';
 import Modal from './components/Modal/theme';
-import NautobotGridLayout from './components/NautobotGridLayout/theme';
+import NautobotGrid from './components/NautobotGrid/theme';
 import Popover from './components/Popover/theme';
 import Progress from './components/Progress/theme';
 import Select from './components/Select/theme';
@@ -51,7 +51,7 @@ export default extendBaseTheme({
     Link,
     Menu,
     Modal,
-    NautobotGridLayout,
+    NautobotGrid,
     Popover,
     Progress,
     Select,

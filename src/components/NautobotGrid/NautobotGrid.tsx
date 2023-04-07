@@ -32,9 +32,9 @@ export type NautobotGridCellsConfig<Cells extends 'columns' | 'rows'> = {
       minHeight?: string | number | null | undefined;
     });
 
-export interface NautobotGridLayoutProps
+export interface NautobotGridProps
   extends Omit<HTMLChakraProps<'div'>, 'children'>,
-    ThemingProps<'NautobotGridLayout'> {
+    ThemingProps<'NautobotGrid'> {
   children?: ReactElement | ReactElement[];
   columns?:
     | NautobotGridCellsConfig<'columns'>
@@ -48,7 +48,7 @@ export interface NautobotGridLayoutProps
     | undefined;
 }
 
-const NautobotGridLayout = forwardRef<NautobotGridLayoutProps, 'div'>(
+const NautobotGrid = forwardRef<NautobotGridProps, 'div'>(
   (
     {
       children,
@@ -63,7 +63,7 @@ const NautobotGridLayout = forwardRef<NautobotGridLayoutProps, 'div'>(
     },
     ref
   ) => {
-    const styles = useStyleConfig('NautobotGridLayout', {
+    const styles = useStyleConfig('NautobotGrid', {
       colorScheme,
       orientation,
       size,
@@ -72,11 +72,7 @@ const NautobotGridLayout = forwardRef<NautobotGridLayoutProps, 'div'>(
     });
 
     const getCellsSpan = useCallback(
-      (
-        cells:
-          | NautobotGridLayoutProps['columns']
-          | NautobotGridLayoutProps['rows']
-      ) => {
+      (cells: NautobotGridProps['columns'] | NautobotGridProps['rows']) => {
         const cellsSpanTemplate = (() => {
           if (typeof cells == 'object' && typeof cells?.span === 'string') {
             return cells.span;
@@ -103,9 +99,7 @@ const NautobotGridLayout = forwardRef<NautobotGridLayoutProps, 'div'>(
 
     const getCellsCount = useCallback(
       (
-        cells:
-          | NautobotGridLayoutProps['columns']
-          | NautobotGridLayoutProps['rows'],
+        cells: NautobotGridProps['columns'] | NautobotGridProps['rows'],
         defaultValue?: number
       ) => {
         if (typeof cells === 'object' && !Number.isNaN(Number(cells?.count))) {
@@ -175,6 +169,6 @@ const NautobotGridLayout = forwardRef<NautobotGridLayoutProps, 'div'>(
   }
 );
 
-NautobotGridLayout.displayName = 'NautobotGridLayout';
+NautobotGrid.displayName = 'NautobotGrid';
 
-export default NautobotGridLayout;
+export default NautobotGrid;

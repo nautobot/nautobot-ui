@@ -1,27 +1,27 @@
 import type { ComponentMeta, ComponentStory } from '@storybook/react';
 import React from 'react';
 
-import { NautobotGridLayout } from '../..';
-import type { NautobotGridLayoutProps } from '../..';
+import { NautobotGrid } from '../..';
+import type { NautobotGridProps } from '../..';
 
 import { StoryContent } from './utils';
 
-const Story: ComponentMeta<typeof NautobotGridLayout> = {
-  component: NautobotGridLayout,
+const Story: ComponentMeta<typeof NautobotGrid> = {
+  component: NautobotGrid,
   parameters: { layout: 'fullscreen' },
-  title: 'Components/NautobotGridLayout',
+  title: 'Components/NautobotGrid',
 };
 
 export default Story;
 
 const Template: ComponentStory<
   (
-    props: NautobotGridLayoutProps & { childrenCount?: number }
-  ) => ReturnType<typeof NautobotGridLayout>
+    props: NautobotGridProps & { childrenCount?: number }
+  ) => ReturnType<typeof NautobotGrid>
 > = ({
   childrenCount,
   ...args
-}: NautobotGridLayoutProps & { childrenCount?: number }) => (
+}: NautobotGridProps & { childrenCount?: number }) => (
   <>
     <style>
       {`#root {
@@ -31,13 +31,13 @@ const Template: ComponentStory<
       }`}
     </style>
 
-    <NautobotGridLayout background="white-0" {...args}>
+    <NautobotGrid background="white-0" {...args}>
       {Array.from({
         length: childrenCount ?? 0,
       }).map((_, index) => (
         <StoryContent key={index} />
       ))}
-    </NautobotGridLayout>
+    </NautobotGrid>
   </>
 );
 

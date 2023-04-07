@@ -1,18 +1,18 @@
-import { NautobotGridLayout, NautobotUIProvider } from '../..';
+import { NautobotGrid, NautobotUIProvider } from '../..';
 
 import { StoryContent } from './utils';
 
-<Meta title="Components/NautobotGridLayout/Introduction" />
+<Meta title="Components/NautobotGrid/Introduction" />
 
-# `NautobotGridLayout` Introduction
+# `NautobotGrid` Introduction
 
-`NautobotGridLayout` provides an abstraction over a CSS `display: grid` element.
-It is designed around Nautobot UI design system and should not be treated as a
+`NautobotGrid` provides an abstraction over a CSS `display: grid` element. It is
+designed around Nautobot UI design system and should not be treated as a
 replacement for Chakra UI's `<Grid>` component.
 
 ## Usage
 
-Apart from standard HTML attributes and Chakra UI props, `NautobotGridLayout`
+Apart from standard HTML attributes and Chakra UI props, `NautobotGrid`
 implements its own props: `columns` and `rows`, which can either be omitted,
 passed as primitive values or passed as more complex config objects:
 
@@ -35,7 +35,7 @@ passed as primitive values or passed as more complex config objects:
   children. For example:
 
   ```typescript
-  <NautobotGridLayout columns={{ span: '2 1 1' }}>...</NautobotGridLayout>
+  <NautobotGrid columns={{ span: '2 1 1' }}>...</NautobotGrid>
   ```
 
 ## Examples
@@ -45,65 +45,65 @@ Now, with all the theory laid out, let's see some practical examples:
 ### Fullscreen
 
 <NautobotUIProvider>
-  <NautobotGridLayout columns="4" minHeight={300}>
+  <NautobotGrid columns="4" minHeight={300}>
     <StoryContent />
-  </NautobotGridLayout>
+  </NautobotGrid>
 </NautobotUIProvider>
 
 ```typescript
-<NautobotGridLayout columns="4">...</NautobotGridLayout>
+<NautobotGrid columns="4">...</NautobotGrid>
 ```
 
 ### 2-1-1 grid
 
 <NautobotUIProvider>
-  <NautobotGridLayout columns="2 1 1" minHeight={300}>
+  <NautobotGrid columns="2 1 1" minHeight={300}>
     <StoryContent />
     <StoryContent />
     <StoryContent />
     <StoryContent />
     <StoryContent />
     <StoryContent />
-  </NautobotGridLayout>
+  </NautobotGrid>
 </NautobotUIProvider>
 
 ```typescript
-<NautobotGridLayout columns="2 1 1">...</NautobotGridLayout>
+<NautobotGrid columns="2 1 1">...</NautobotGrid>
 ```
 
 ### 1-1-2 grid
 
 <NautobotUIProvider>
-  <NautobotGridLayout columns="1 1 2" minHeight={300}>
+  <NautobotGrid columns="1 1 2" minHeight={300}>
     <StoryContent />
     <StoryContent />
     <StoryContent />
-  </NautobotGridLayout>
+  </NautobotGrid>
 </NautobotUIProvider>
 
 ```typescript
-<NautobotGridLayout columns="1 1 2">...</NautobotGridLayout>
+<NautobotGrid columns="1 1 2">...</NautobotGrid>
 ```
 
 ### 2-2 grid
 
 <NautobotUIProvider>
-  <NautobotGridLayout columns="2 2" minHeight={300}>
+  <NautobotGrid columns="2 2" minHeight={300}>
     <StoryContent />
     <StoryContent />
     <StoryContent />
     <StoryContent />
-  </NautobotGridLayout>
+  </NautobotGrid>
 </NautobotUIProvider>
 
 ```typescript
-<NautobotGridLayout columns="2 2">...</NautobotGridLayout>
+<NautobotGrid columns="2 2">...</NautobotGrid>
 ```
 
 ### Complex grid
 
 <NautobotUIProvider>
-  <NautobotGridLayout
+  <NautobotGrid
     columns="1 1 1 1 4"
     minHeight={300}
     rows={{ count: 4, span: '1 1 1 1 3' }}
@@ -113,11 +113,11 @@ Now, with all the theory laid out, let's see some practical examples:
     <StoryContent />
     <StoryContent />
     <StoryContent />
-  </NautobotGridLayout>
+  </NautobotGrid>
 </NautobotUIProvider>
 
 ```typescript
-<NautobotGridLayout columns="1 1 1 1 4" rows={{ count: 4, span: '1 1 1 1 3' }}>
+<NautobotGrid columns="1 1 1 1 4" rows={{ count: 4, span: '1 1 1 1 3' }}>
   ...
-</NautobotGridLayout>
+</NautobotGrid>
 ```
