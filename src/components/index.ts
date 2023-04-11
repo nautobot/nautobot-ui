@@ -108,6 +108,8 @@ export type {
   ModalHeaderProps,
   ModalOverlayProps,
 } from './Modal';
+export { NautobotGrid, NautobotGridItem } from './NautobotGrid';
+export type { NautobotGridItemProps, NautobotGridProps } from './NautobotGrid';
 export {
   Navbar,
   NavbarCollapseButton,

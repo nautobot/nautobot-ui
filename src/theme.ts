@@ -17,6 +17,7 @@ import Input from './components/Input/theme';
 import Link from './components/Link/theme';
 import Menu from './components/Menu/theme';
 import Modal from './components/Modal/theme';
+import NautobotGrid from './components/NautobotGrid/theme';
 import Navbar from './components/Navbar/theme';
 import Popover from './components/Popover/theme';
 import Progress from './components/Progress/theme';
@@ -51,6 +52,7 @@ export default extendBaseTheme({
     Link,
     Menu,
     Modal,
+    NautobotGrid,
     Navbar,
     Popover,
     Progress,
