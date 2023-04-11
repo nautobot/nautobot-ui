@@ -4,6 +4,7 @@ export {
   MenuGroup,
   MenuList,
   MenuOptionGroup,
+  useMenuContext,
 } from '@chakra-ui/react';
 export type {
   MenuButtonProps,
@@ -11,6 +12,7 @@ export type {
   MenuGroupProps,
   MenuListProps,
   MenuOptionGroupProps,
+  UseMenuReturn,
 } from '@chakra-ui/react';
 
 export { default as Menu } from './Menu';

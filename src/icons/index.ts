@@ -22,6 +22,7 @@ export { default as MeatballsIcon } from './MeatballsIcon';
 export { default as MinusIcon } from './MinusIcon';
 export { default as NautobotIcon } from './NautobotIcon';
 export { default as NautobotLogoIcon } from './NautobotLogoIcon';
+export { default as NotificationIcon } from './NotificationIcon';
 export { default as NtcThumbnailIcon } from './NtcThumbnailIcon';
 export { default as PlatformIcon } from './PlatformIcon';
 export { default as PlayIcon } from './PlayIcon';

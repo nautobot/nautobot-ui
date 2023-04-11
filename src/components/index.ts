@@ -77,6 +77,7 @@ export {
   MenuItemOption,
   MenuList,
   MenuOptionGroup,
+  useMenuContext,
 } from './Menu';
 export type {
   MenuButtonProps,
@@ -87,6 +88,7 @@ export type {
   MenuListProps,
   MenuOptionGroupProps,
   MenuProps,
+  UseMenuReturn,
 } from './Menu';
 export {
   Modal,
@@ -108,6 +110,29 @@ export type {
 } from './Modal';
 export { NautobotGrid, NautobotGridItem } from './NautobotGrid';
 export type { NautobotGridItemProps, NautobotGridProps } from './NautobotGrid';
+export {
+  Navbar,
+  NavbarCollapseButton,
+  NavbarContext,
+  NavbarContextConsumer,
+  NavbarContextProvider,
+  NavbarLogo,
+  NavbarMenuButton,
+  NavbarNotificationButton,
+  NavbarSection,
+  NavbarSections,
+} from './Navbar';
+export type {
+  NavbarCollapseButtonProps,
+  NavbarContextValue,
+  NavbarContextProviderProps,
+  NavbarLogoProps,
+  NavbarMenuButtonProps,
+  NavbarNotificationButtonProps,
+  NavbarProps,
+  NavbarSectionProps,
+  NavbarSectionsProps,
+} from './Navbar';
 export {
   Popover,
   PopoverAnchor,
