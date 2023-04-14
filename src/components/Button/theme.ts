@@ -44,6 +44,7 @@ const variant = {
 export default defineStyleConfig({
   baseStyle: {
     borderRadius: 'md',
+    flex: 'none',
     fontWeight: 'normal',
     lineHeight: 'normal',
     justifyContent: 'center',
