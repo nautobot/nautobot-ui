@@ -53,6 +53,7 @@ export default defineMultiStyleConfig({
       paddingX: 0,
       paddingY: 'sm',
       width: 'auto',
+      zIndex: 1,
     },
   }),
 
