@@ -20,6 +20,27 @@ export type {
   UseAccordionItemProps,
   UseAccordionItemReturn,
 } from './Accordion';
+export {
+  Alert,
+  AlertBody,
+  AlertCloseButton,
+  AlertContext,
+  AlertContextConsumer,
+  AlertContextProvider,
+  AlertDescription,
+  AlertIcon,
+  AlertTitle,
+} from './Alert';
+export type {
+  AlertBodyProps,
+  AlertCloseButtonProps,
+  AlertContextValue,
+  AlertContextProviderProps,
+  AlertDescriptionProps,
+  AlertIconProps,
+  AlertProps,
+  AlertTitleProps,
+} from './Alert';
 export { Breadcrumb, Breadcrumbs, BreadcrumbsDivider } from './Breadcrumbs';
 export type {
   BreadcrumbProps,
@@ -31,6 +52,8 @@ export { default as Button } from './Button';
 export type { ButtonProps } from './Button';
 export { Checkbox, CheckboxIcon } from './Checkbox';
 export type { CheckboxProps, CheckboxIconProps } from './Checkbox';
+export { default as CloseButton } from './CloseButton';
+export type { CloseButtonProps } from './CloseButton';
 export {
   FormContainer,
   FormControl,
@@ -228,6 +251,8 @@ export {
   TagRightIcon,
 } from './Tag';
 export type { TagCloseButtonProps, TagLabelProps, TagProps } from './Tag';
+export { useToast } from './Toast';
+export type { CreateToastFnReturn, UseToastOptions } from './Toast';
 export { default as Tooltip } from './Tooltip';
 export type { TooltipProps } from './Tooltip';
 export { TreeEdge } from './TreeEdge';

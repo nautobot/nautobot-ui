@@ -1,9 +1,11 @@
 import { extendBaseTheme } from '@chakra-ui/react';
 
 import Accordion from './components/Accordion/theme';
+import Alert from './components/Alert/theme';
 import Breadcrumbs from './components/Breadcrumbs/theme';
 import Button from './components/Button/theme';
 import Checkbox from './components/Checkbox/theme';
+import CloseButton from './components/CloseButton/theme';
 import Divider from './components/Divider/theme';
 import Form, {
   FormContainer,
@@ -37,9 +39,11 @@ export default extendBaseTheme({
   ...foundations,
   components: {
     Accordion,
+    Alert,
     Breadcrumbs,
     Button,
     Checkbox,
+    CloseButton,
     Divider,
     Form,
     FormContainer,
