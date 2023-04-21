@@ -12,17 +12,19 @@ import {
 
 export interface UseToastOptions extends ChakraUseToastOptions {}
 
-const useToast = ({
-  containerStyle,
-  description,
-  icon,
-  isClosable = true,
-  position = 'top-right',
-  status = 'info',
-  title,
-  ...rest
-}: UseToastOptions) =>
-  chakraUseToast({
+const useToast = (options?: UseToastOptions) => {
+  const {
+    containerStyle,
+    description,
+    icon,
+    isClosable = true,
+    position = 'top-right',
+    status = 'info',
+    title,
+    ...rest
+  } = options ?? {};
+
+  return chakraUseToast({
     containerStyle: {
       marginBottom: 0,
       marginTop: 'sm',
@@ -58,5 +60,6 @@ const useToast = ({
     title,
     ...rest,
   });
+};
 
 export default useToast;
