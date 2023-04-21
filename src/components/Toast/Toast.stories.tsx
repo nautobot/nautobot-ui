@@ -2,7 +2,7 @@ import LinkTo from '@storybook/addon-links/react';
 import type { ComponentStory, ComponentMeta } from '@storybook/react';
 import React, { useCallback } from 'react';
 
-import { Button, Code, Flex, Link, Text, useToast } from '../..';
+import { Button, Code, Divider, Flex, Link, Text, useToast } from '../..';
 import type { UseToastOptions } from '../..';
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -24,13 +24,30 @@ const Template: ComponentStory<typeof Toast> = (args: UseToastOptions) => {
     <Flex align="flex-start" direction="column" gap="sm">
       <Text>
         As opposed to standard JSX components, <Code>Toast</Code> is rendered by{' '}
-        <Code>useToast</Code> hook. For rendering standard JSX components make
-        sure to check out{' '}
+        <Code>toast</Code> function returned from <Code>useToast</Code> hook.
+        For rendering standard JSX components make sure to check out{' '}
         <Link as={LinkTo} kind="Components/Alert" story="Basic">
           Alert
         </Link>
         .
       </Text>
+      <Text>
+        All parameters passed to <Code>useToast</Code> hook, can also be passed
+        to its returned <Code>toast</Code> function. This is especially useful
+        in case of dynamic parameters. For example, this call:
+      </Text>
+      <Text>
+        <Code whiteSpace="pre-wrap">
+          {"const toast = useToast({ title: 'Title' });\ntoast();"}
+        </Code>
+      </Text>
+      <Text>Is an equivalent of:</Text>
+      <Text>
+        <Code whiteSpace="pre-wrap">
+          {"const toast = useToast();\ntoast({ title: 'Title' });"}
+        </Code>
+      </Text>
+      <Divider marginY="sm" />
       <Text>
         <Code whiteSpace="pre-wrap">
           const toast = useToast({`${JSON.stringify(args, null, 2)}`});

@@ -33,16 +33,25 @@ const useToast = ({
     description,
     isClosable,
     position,
-    render: ({ onClose }) => (
-      <Alert status={status}>
-        <AlertIcon>{icon}</AlertIcon>
-        <AlertBody hasCloseButton={isClosable}>
-          {title ? <AlertTitle>{title}</AlertTitle> : null}
-          {description ? (
-            <AlertDescription>{description}</AlertDescription>
+    render: ({ onClose, ...props }) => (
+      <Alert status={props?.status ?? status}>
+        <AlertIcon>{props?.icon ?? icon}</AlertIcon>
+
+        <AlertBody hasCloseButton={props?.isClosable ?? isClosable}>
+          {props?.title ?? title ? (
+            <AlertTitle>{props?.title ?? title}</AlertTitle>
+          ) : null}
+
+          {props?.description ?? description ? (
+            <AlertDescription>
+              {props?.description ?? description}
+            </AlertDescription>
           ) : null}
         </AlertBody>
-        {isClosable ? <AlertCloseButton onClick={onClose} /> : null}
+
+        {props?.isClosable ?? isClosable ? (
+          <AlertCloseButton onClick={onClose} />
+        ) : null}
       </Alert>
     ),
     status,
