@@ -174,6 +174,31 @@ export type {
   PopoverContentProps,
   PopoverHeaderProps,
 } from './Popover';
+export {
+  REACT_SELECT_INNER_COMPONENT_KEYS,
+  ReactSelect,
+  ReactSelectContext,
+  ReactSelectContextConsumer,
+  ReactSelectContextProvider,
+  ReactSelectDropdownIndicator,
+  ReactSelectOption,
+  ReactSelectValueContainer,
+} from './ReactSelect';
+export type {
+  ReactSelectContextProviderProps,
+  ReactSelectContextValue,
+  ReactSelectDropdownIndicatorProps,
+  ReactSelectGroupBase,
+  ReactSelectMultiValue,
+  ReactSelectOnChangeValue,
+  ReactSelectOptionProps,
+  ReactSelectOptions,
+  ReactSelectOptionsOrGroups,
+  ReactSelectProps,
+  ReactSelectPropsValue,
+  ReactSelectSingleValue,
+  ReactSelectValueContainerProps,
+} from './ReactSelect';
 export { default as Select } from './Select';
 export type { SelectOption, SelectProps } from './Select';
 export {
