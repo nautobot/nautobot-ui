@@ -7,7 +7,7 @@ import dts from 'rollup-plugin-dts';
 
 import pkg from './package.json' assert { type: 'json' };
 
-const external = Object.keys(pkg.peerDependencies);
+const external = [...Object.keys(pkg.peerDependencies), 'lodash.mergewith'];
 
 /** @type {import('rollup').RollupOptions[]} */
 export default [
