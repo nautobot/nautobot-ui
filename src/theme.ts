@@ -23,8 +23,10 @@ import NautobotGrid from './components/NautobotGrid/theme';
 import Navbar from './components/Navbar/theme';
 import Popover from './components/Popover/theme';
 import Progress from './components/Progress/theme';
+import ReactSelect from './components/ReactSelect/theme';
 import Select from './components/Select/theme';
 import Sidebar from './components/Sidebar/theme';
+import Spinner from './components/Spinner/theme';
 import StatusIndicator from './components/StatusIndicator/theme';
 import Switch from './components/Switch/theme';
 import Table from './components/Table/theme';
@@ -60,8 +62,10 @@ export default extendBaseTheme({
     Navbar,
     Popover,
     Progress,
+    ReactSelect,
     Select,
     Sidebar,
+    Spinner,
     StatusIndicator,
     Switch,
     Table,

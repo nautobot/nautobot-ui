@@ -17,5 +17,6 @@ export default defineStyleConfig({
     color: $tooltipFg.reference,
     padding: 'sm',
     textStyle: 'P1',
+    zIndex: 'tooltip',
   },
 });

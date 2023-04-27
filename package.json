@@ -36,7 +36,8 @@
   "homepage": "https://github.com/nautobot/nautobot-ui#readme",
   "dependencies": {
     "@tanstack/react-table": "^8.7.9",
-    "lodash.merge": "^4.6.2"
+    "lodash.merge": "^4.6.2",
+    "react-select": "^5.7.2"
   },
   "devDependencies": {
     "@babel/core": "^7.20.12",

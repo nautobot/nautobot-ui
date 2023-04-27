@@ -6,6 +6,7 @@ import { ArrowDownIcon } from '../../icons';
 
 export interface SelectOption {
   value: string;
+  isDisabled?: boolean;
   label?: string;
 }
 

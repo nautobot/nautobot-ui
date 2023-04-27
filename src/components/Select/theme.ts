@@ -37,10 +37,14 @@ export default defineMultiStyleConfig({
   },
 
   sizes: {
-    md: definePartsStyle({}),
+    md: definePartsStyle({
+      ...inputTheme.sizes?.md,
+    }),
   },
 
   variants: {
-    default: definePartsStyle({}),
+    default: definePartsStyle({
+      ...inputTheme.variants?.default,
+    }),
   },
 });
