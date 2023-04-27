@@ -71,10 +71,6 @@ const Template: ComponentStory<typeof ReactSelectAsync> = (args) => {
 export const Basic = Template.bind({});
 
 Basic.argTypes = {
-  isLoading: {
-    defaultValue: true,
-    type: { name: 'boolean', required: false },
-  },
   cacheOptions: {
     defaultValue: true,
     type: { name: 'boolean', required: false },
