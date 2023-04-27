@@ -26,6 +26,7 @@ import Progress from './components/Progress/theme';
 import ReactSelect from './components/ReactSelect/theme';
 import Select from './components/Select/theme';
 import Sidebar from './components/Sidebar/theme';
+import Spinner from './components/Spinner/theme';
 import StatusIndicator from './components/StatusIndicator/theme';
 import Switch from './components/Switch/theme';
 import Table from './components/Table/theme';
@@ -64,6 +65,7 @@ export default extendBaseTheme({
     ReactSelect,
     Select,
     Sidebar,
+    Spinner,
     StatusIndicator,
     Switch,
     Table,

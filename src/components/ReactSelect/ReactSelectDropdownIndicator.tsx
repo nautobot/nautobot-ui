@@ -24,7 +24,7 @@ const ReactSelectDropdownIndicator = <
 >({
   innerProps,
   isFocused,
-  selectProps: { menuIsOpen },
+  selectProps: { isLoading, menuIsOpen },
 }: ReactSelectDropdownIndicatorProps<Option, IsMulti, Group>) => {
   const {
     styles: { dropdownIndicator },
@@ -38,6 +38,7 @@ const ReactSelectDropdownIndicator = <
       {...styles}
       {...(isFocused ? _focus : undefined)}
       {...(menuIsOpen ? _open : undefined)}
+      {...(isLoading ? { display: 'none' } : undefined)}
       {...(innerProps as Record<string, unknown>)}
     />
   );

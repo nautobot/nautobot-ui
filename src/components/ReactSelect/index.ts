@@ -9,6 +9,7 @@ export type {
 } from 'react-select';
 
 export { REACT_SELECT_INNER_COMPONENT_KEYS } from './constants';
+export { useReactSelectComponents, useReactSelectStyles } from './hooks';
 export { default as ReactSelect } from './ReactSelect';
 export type { ReactSelectProps } from './ReactSelect';
 export {
@@ -22,6 +23,8 @@ export type {
 } from './ReactSelectContext';
 export { default as ReactSelectDropdownIndicator } from './ReactSelectDropdownIndicator';
 export type { ReactSelectDropdownIndicatorProps } from './ReactSelectDropdownIndicator';
+export { default as ReactSelectLoadingIndicator } from './ReactSelectLoadingIndicator';
+export type { ReactSelectLoadingIndicatorProps } from './ReactSelectLoadingIndicator';
 export { default as ReactSelectOption } from './ReactSelectOption';
 export type { ReactSelectOptionProps } from './ReactSelectOption';
 export { default as ReactSelectValueContainer } from './ReactSelectValueContainer';

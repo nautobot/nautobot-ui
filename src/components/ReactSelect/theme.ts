@@ -8,6 +8,13 @@ import { REACT_SELECT_INNER_COMPONENT_KEYS } from './constants';
 const { definePartsStyle, defineMultiStyleConfig } =
   createMultiStyleConfigHelpers(REACT_SELECT_INNER_COMPONENT_KEYS);
 
+const message = {
+  color: 'gray-3',
+  cursor: 'default',
+  paddingX: 'md',
+  textAlign: 'left',
+};
+
 export default defineMultiStyleConfig({
   baseStyle: definePartsStyle({
     container: {
@@ -28,14 +35,32 @@ export default defineMultiStyleConfig({
       },
 
       '&:hover': {
-        '> div > svg': { color: 'blue-1' },
         '> div > [id$="placeholder"]': {
           ...selectTheme.baseStyle?.field._hover?._placeholder,
+        },
+
+        '> div:last-of-type > *': {
+          color: 'blue-1',
         },
       },
     },
 
     dropdownIndicator: {
+      _focus: {
+        color: 'blue-1',
+      },
+
+      _open: {
+        variant: 'rotate-180',
+      },
+    },
+
+    loadingMessage: message,
+
+    loadingIndicator: {
+      position: 'absolute',
+      right: 'sm',
+
       _focus: {
         color: 'blue-1',
       },
@@ -69,12 +94,7 @@ export default defineMultiStyleConfig({
       },
     },
 
-    noOptionsMessage: {
-      color: 'gray-3',
-      cursor: 'default',
-      paddingX: 'md',
-      textAlign: 'left',
-    },
+    noOptionsMessage: message,
 
     option: {
       cursor: 'default',
