@@ -55,9 +55,9 @@ export type {
   UseDisclosureReturn,
 } from '@chakra-ui/react';
 
+export * from './utils';
 export * from './components';
 export * from './icons';
 export { default as NautobotUIProvider } from './NautobotUIProvider';
 export type { NautobotUIProviderProps } from './NautobotUIProvider';
 export { default as theme } from './theme';
-export * from './utils';
