@@ -129,11 +129,11 @@ const NautobotGrid = forwardRef<NautobotGridProps, 'div'>(
     const rowSpans = getCellsSpan(rows);
 
     const autoColumns = `minmax(${
-      (typeof columns === 'object' && columns?.minWidth) || 'min-content'
+      (typeof columns === 'object' && columns?.minWidth) || 'auto'
     }, ${(typeof columns === 'object' && columns?.maxWidth) || '1fr'})`;
 
     const autoRows = `minmax(${
-      (typeof rows === 'object' && rows?.minHeight) || 'min-content'
+      (typeof rows === 'object' && rows?.minHeight) || 'auto'
     }, ${(typeof rows === 'object' && rows?.maxHeight) || '1fr'})`;
 
     return (
