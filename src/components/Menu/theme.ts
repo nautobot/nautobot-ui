@@ -25,6 +25,7 @@ export default defineMultiStyleConfig({
 
     item: {
       color: 'black-0',
+      minWidth: 180,
       paddingX: 'md',
       paddingY: 'xs',
       textStyle: 'P2',
@@ -49,7 +50,6 @@ export default defineMultiStyleConfig({
       background: $menuBg.reference,
       borderRadius: 'sm',
       boxShadow: $menuShadow.reference,
-      minWidth: 180,
       paddingX: 0,
       paddingY: 'sm',
       width: 'auto',

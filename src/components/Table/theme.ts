@@ -25,7 +25,13 @@ export default defineMultiStyleConfig({
       width: 'full',
     },
 
-    td: cell,
+    td: {
+      ...cell,
+      background: 'white-0',
+      transitionDuration: 'default',
+      transitionProperty: 'background',
+      transitionTimingFunction: 'default',
+    },
 
     th: {
       ...cell,
@@ -50,11 +56,8 @@ export default defineMultiStyleConfig({
       borderBottomColor: 'gray-1',
       borderBottomStyle: 'solid',
       borderBottomWidth: 1,
-      transitionDuration: 'default',
-      transitionProperty: 'background',
-      transitionTimingFunction: 'default',
 
-      _hover: { background: 'blue-10%' },
+      _hover: { td: { background: 'blue-10%' } },
 
       _last: { borderBottom: 'none' },
     },
