@@ -36,6 +36,7 @@ const getColumnDefMultiRowSelection = <
     disableSorting: true,
     disableColumnVisibilityToggling: true,
     minimumWidth: true,
+    sticky: { left: 0 },
   },
 });
 

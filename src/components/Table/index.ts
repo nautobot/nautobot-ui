@@ -46,3 +46,4 @@ export type {
 } from './types';
 export { default as useTableRenderer } from './useTableRenderer';
 export type { UseTableRendererProps } from './useTableRenderer';
+export { getCellStickyProps } from './utils';

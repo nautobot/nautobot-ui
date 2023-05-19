@@ -1,3 +1,4 @@
+import type { PositionProps, SystemProps } from '@chakra-ui/react';
 import type { RowData } from '@tanstack/react-table';
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -25,6 +26,23 @@ export interface NautobotUIColumnMeta<TData extends RowData, TValue> {
    * for example when the children handle their own pointer events and styles.
    */
   noHeaderCellPaddings?: boolean;
+
+  /**
+   * Make given column sticky, i.e. always visible, even when table is too wide
+   * to fit inside the browser viewport and overflows. Requires at least one of
+   * the position props (`bottom`, `left`, `right` and/or `top`) to be passed
+   * explicitly. Optionally, any other style props can be passed, e.g. `zIndex`.
+   * Can also be `false` to disable column default sticky behavior.
+   */
+  sticky?:
+    | ((
+        | Required<Pick<PositionProps, 'bottom'>>
+        | Required<Pick<PositionProps, 'left'>>
+        | Required<Pick<PositionProps, 'right'>>
+        | Required<Pick<PositionProps, 'top'>>
+      ) &
+        Partial<SystemProps>)
+    | false;
 }
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars

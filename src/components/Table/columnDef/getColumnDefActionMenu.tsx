@@ -1,20 +1,18 @@
-import { calc, cssVar } from '@chakra-ui/react';
+import { calc } from '@chakra-ui/react';
 import type { CellContext, HeaderContext } from '@tanstack/react-table';
 import React from 'react';
 import type { ElementType } from 'react';
 
-import {
-  Button,
-  Checkbox,
-  Popover,
-  PopoverArrow,
-  PopoverBody,
-  PopoverContent,
-  PopoverTrigger,
-} from '../..';
 import { SettingsIcon } from '../../../icons';
-
-const $chakraSpace16 = cssVar('chakra-space-16');
+import { getCssVar } from '../../../utils';
+import Button from '../../Button';
+import {
+  Menu,
+  MenuButton,
+  MenuItemOption,
+  MenuList,
+  MenuOptionGroup,
+} from '../../Menu';
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const getColumnDefActionMenu = <Datum extends object, TValue = any>({
@@ -26,25 +24,42 @@ const getColumnDefActionMenu = <Datum extends object, TValue = any>({
     ActionMenu ? <ActionMenu cellContext={cellContext} /> : null,
 
   header: ({ table }: HeaderContext<Datum, TValue>) => (
-    <Popover placement="bottom-end">
-      <PopoverTrigger>
-        <Button
-          _active={{ background: 'blue-10%' }}
-          _focusVisible={{ background: 'blue-10%' }}
-          _hover={{ background: 'blue-10%' }}
-          borderRadius={0}
-          color="blue-1"
-          height="auto"
-          leftIcon={<SettingsIcon size="sm" />}
-          paddingLeft={8}
-          paddingRight={calc.subtract($chakraSpace16.reference, '1px')}
-          paddingY="11px"
-          variant="unstyled"
-        />
-      </PopoverTrigger>
-      <PopoverContent>
-        <PopoverArrow />
-        <PopoverBody>
+    <Menu closeOnSelect={false} placement="bottom-end">
+      <MenuButton
+        _active={{ background: 'blue-10%' }}
+        _focusVisible={{ background: 'blue-10%' }}
+        _hover={{ background: 'blue-10%' }}
+        as={Button}
+        borderRadius={0}
+        color="blue-1"
+        height="auto"
+        leftIcon={<SettingsIcon size="sm" />}
+        paddingLeft={8}
+        paddingRight={calc.subtract(getCssVar('space.16').reference, '1px')}
+        paddingY={calc.subtract(getCssVar('space.12').reference, '1px')}
+        variant="unstyled"
+      />
+      <MenuList>
+        <MenuOptionGroup
+          type="checkbox"
+          value={table.getVisibleLeafColumns().map(({ id }) => id)}
+          onChange={(columns: string | string[]) => {
+            table.setColumnVisibility(() =>
+              table.getAllLeafColumns().reduce(
+                (columnVisibility, { id }) => ({
+                  ...columnVisibility,
+                  ...((typeof columns === 'string'
+                    ? [columns]
+                    : columns
+                  ).includes(id)
+                    ? undefined
+                    : { [id]: false }),
+                }),
+                {}
+              )
+            );
+          }}
+        >
           {table
             .getAllLeafColumns()
             .filter(
@@ -52,16 +67,7 @@ const getColumnDefActionMenu = <Datum extends object, TValue = any>({
                 meta?.disableColumnVisibilityToggling !== true
             )
             .map(
-              (
-                {
-                  columnDef: { header },
-                  getIsVisible,
-                  getToggleVisibilityHandler,
-                  id,
-                },
-                index,
-                array
-              ) => {
+              ({ columnDef: { header }, getIsVisible, id }, index, array) => {
                 const visibleColumns = array.reduce(
                   (visibleColumnsCount, column) =>
                     visibleColumnsCount + (column.getIsVisible() ? 1 : 0),
@@ -71,23 +77,20 @@ const getColumnDefActionMenu = <Datum extends object, TValue = any>({
                 const isVisible = getIsVisible();
 
                 return (
-                  <Checkbox
+                  <MenuItemOption
                     key={id}
                     isChecked={isVisible}
                     isDisabled={visibleColumns === 1 && isVisible}
-                    paddingX="md"
-                    paddingY="xs"
-                    size="sm"
-                    onChange={getToggleVisibilityHandler()}
+                    value={id}
                   >
                     {String(header)}
-                  </Checkbox>
+                  </MenuItemOption>
                 );
               }
             )}
-        </PopoverBody>
-      </PopoverContent>
-    </Popover>
+        </MenuOptionGroup>
+      </MenuList>
+    </Menu>
   ),
 
   id: 'actionMenu',
@@ -97,6 +100,7 @@ const getColumnDefActionMenu = <Datum extends object, TValue = any>({
     disableColumnVisibilityToggling: true,
     minimumWidth: true,
     noHeaderCellPaddings: true,
+    sticky: { right: 0 },
   },
 });
 

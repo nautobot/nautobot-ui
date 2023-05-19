@@ -230,6 +230,7 @@ export type { SwitchProps } from './Switch';
 export {
   createColumnHelper,
   flexRender,
+  getCellStickyProps,
   getCoreRowModel,
   getFilteredRowModel,
   getPaginationRowModel,
