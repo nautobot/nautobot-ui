@@ -16,7 +16,7 @@ const SidebarButton = forwardRef<SidebarButtonProps, 'button'>(
     <Button
       ref={ref}
       _disabled={{ color: 'gray-2', pointerEvents: 'none' }}
-      color="white-0"
+      color="gray-1"
       gap="xs"
       justifyContent="flex-start"
       paddingX="md"
