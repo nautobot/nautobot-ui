@@ -112,7 +112,7 @@ export default defineMultiStyleConfig({
       button: {
         ...variant.sidebar.button,
         background: 'navy-0',
-        color: 'gray-4',
+        color: 'gray-1',
         textTransform: 'uppercase',
 
         _focusVisible: {
@@ -142,7 +142,7 @@ export default defineMultiStyleConfig({
       button: {
         ...variant.sidebar.button,
         background: 'navy-1',
-        color: 'white-0',
+        color: 'gray-1',
         fontWeight: 'normal',
         gap: 'xs',
 

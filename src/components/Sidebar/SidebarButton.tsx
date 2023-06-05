@@ -9,14 +9,15 @@ export interface SidebarButtonProps extends ButtonProps {
   isFirst?: boolean;
   isLast?: boolean;
   treeEdgeProps?: TreeEdgeProps;
+  active?: boolean;
 }
 
 const SidebarButton = forwardRef<SidebarButtonProps, 'button'>(
-  ({ children, isFirst, isLast, level, treeEdgeProps, ...rest }, ref) => (
+  ({ active = false, children, isFirst, isLast, level, treeEdgeProps, ...rest }, ref) => (
     <Button
       ref={ref}
       _disabled={{ color: 'gray-2', pointerEvents: 'none' }}
-      color="white-0"
+      color={active ? 'orange-0' : 'gray-1'}
       gap="xs"
       justifyContent="flex-start"
       paddingX="md"
