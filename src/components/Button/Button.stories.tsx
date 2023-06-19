@@ -1,20 +1,14 @@
-import type { ComponentStory, ComponentMeta } from '@storybook/react';
+import type { Meta, StoryFn } from '@storybook/react';
 import React from 'react';
+import type { ReactElement } from 'react';
 
 import { Button, Flex } from '../..';
 import type { ButtonProps } from '../..';
 import * as icons from '../../icons';
 
-const Story: ComponentMeta<typeof Button> = {
-  argTypes: {
-    isDisabled: {
-      defaultValue: false,
-      type: {
-        name: 'boolean',
-        required: false,
-      },
-    },
-  },
+const Story: Meta<typeof Button> = {
+  argTypes: { isDisabled: { type: { name: 'boolean', required: false } } },
+  args: { isDisabled: false },
   component: Button,
   parameters: {
     controls: {
@@ -26,7 +20,7 @@ const Story: ComponentMeta<typeof Button> = {
 
 export default Story;
 
-const Template: ComponentStory<typeof Button> = ({
+const Template: StoryFn<typeof Button> = ({
   leftIcon,
   rightIcon,
   ...args
@@ -63,12 +57,8 @@ const Template: ComponentStory<typeof Button> = ({
 export const Basic = Template.bind({});
 
 Basic.argTypes = {
-  size: {
-    defaultValue: 'md',
-    type: { name: 'enum', value: ['md'], required: false },
-  },
+  size: { type: { name: 'enum', value: ['md'], required: false } },
   variant: {
-    defaultValue: 'primaryAction',
     type: {
       name: 'enum',
       value: ['primaryAction', 'primary', 'secondary', 'criticalAction'],
@@ -79,17 +69,15 @@ Basic.argTypes = {
 
 Basic.args = {
   children: 'Example',
+  size: 'md',
+  variant: 'primaryAction',
 };
 
 export const List = Template.bind({});
 
 List.argTypes = {
-  size: {
-    defaultValue: 'sm',
-    type: { name: 'enum', value: ['sm'], required: false },
-  },
+  size: { type: { name: 'enum', value: ['sm'], required: false } },
   variant: {
-    defaultValue: 'list',
     type: {
       name: 'enum',
       value: ['list', 'listSecondary', 'listCritical'],
@@ -100,38 +88,41 @@ List.argTypes = {
 
 List.args = {
   children: 'Example',
+  size: 'sm',
+  variant: 'list',
 };
 
 export const Icon = Template.bind({});
 
 Icon.argTypes = {
   leftIcon: {
-    defaultValue: '',
     type: { name: 'enum', value: ['', ...Object.keys(icons)], required: false },
   },
   rightIcon: {
-    defaultValue: Object.keys(icons)[0],
     type: { name: 'enum', value: ['', ...Object.keys(icons)], required: false },
   },
 };
 
 Icon.args = {
   children: 'Example',
+  leftIcon: '' as unknown as ReactElement,
+  rightIcon: Object.keys(icons)[0] as unknown as ReactElement,
 };
 
 export const TableAction = Template.bind({});
 
 TableAction.argTypes = {
-  size: {
-    defaultValue: 'xs',
-    type: { name: 'enum', value: ['xs'], required: false },
-  },
-  variant: {
-    defaultValue: 'table',
-    type: { name: 'enum', value: ['table'], required: false },
-  },
+  size: { type: { name: 'enum', value: ['xs'], required: false } },
+  variant: { type: { name: 'enum', value: ['table'], required: false } },
   leftIcon: {
-    defaultValue: Object.keys(icons).find((icon) => icon === 'MeatballsIcon'),
     type: { name: 'enum', value: ['', ...Object.keys(icons)], required: false },
   },
+};
+
+TableAction.args = {
+  size: 'xs',
+  variant: 'table',
+  leftIcon: Object.keys(icons).find(
+    (icon) => icon === 'MeatballsIcon'
+  ) as unknown as ReactElement,
 };

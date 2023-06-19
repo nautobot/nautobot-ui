@@ -1,14 +1,19 @@
-import { Flex } from '@chakra-ui/react';
+import { Flex, Table } from '@chakra-ui/react';
+import type { TableProps } from '@chakra-ui/react';
 import { flexRender } from '@tanstack/react-table';
 import type { useReactTable } from '@tanstack/react-table';
 import React, { useRef } from 'react';
 
 import { SortAscendingIcon } from '../../icons';
 
+import TableContainer from './TableContainer';
+import type { TableContainerProps } from './TableContainer';
+import Tbody from './Tbody';
+import Td from './Td';
+import Th from './Th';
+import Thead from './Thead';
+import Tr from './Tr';
 import { getCellStickyProps, useTableScrollPosition } from './utils';
-
-import { Table, TableContainer, Tbody, Td, Th, Thead, Tr } from './';
-import type { TableContainerProps, TableProps } from './';
 
 export interface TableRendererProps<Datum extends object> extends TableProps {
   table: ReturnType<typeof useReactTable<Datum>>;

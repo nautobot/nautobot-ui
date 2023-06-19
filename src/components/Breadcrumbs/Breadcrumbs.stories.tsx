@@ -1,11 +1,11 @@
-import type { ComponentStory, ComponentMeta } from '@storybook/react';
+import type { Meta, StoryFn } from '@storybook/react';
 import React, { forwardRef } from 'react';
 import type { HTMLProps } from 'react';
 
 import { Breadcrumb, Breadcrumbs, Text, Tooltip } from '../..';
 import type { BreadcrumbsProps } from '../..';
 
-const Story: ComponentMeta<typeof Breadcrumbs> = {
+const Story: Meta<typeof Breadcrumbs> = {
   component: Breadcrumbs,
   title: 'Components/Breadcrumbs',
 };
@@ -23,7 +23,7 @@ const MockedReactRouterLink = forwardRef<
 
 MockedReactRouterLink.displayName = 'ReactRouterLink';
 
-const Template: ComponentStory<typeof Breadcrumbs> = ({
+const Template: StoryFn<typeof Breadcrumbs> = ({
   ...args
 }: BreadcrumbsProps) => (
   <Breadcrumbs {...args}>

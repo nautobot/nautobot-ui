@@ -1,4 +1,4 @@
-import type { ComponentStory, ComponentMeta } from '@storybook/react';
+import type { Meta, StoryFn } from '@storybook/react';
 import React from 'react';
 
 import {
@@ -11,7 +11,7 @@ import {
   Select,
 } from '../..';
 
-const Story: ComponentMeta<typeof FormContainer> = {
+const Story: Meta<typeof FormContainer> = {
   component: FormContainer,
   parameters: { controls: { include: [] } },
   title: 'Components/Form',
@@ -19,7 +19,7 @@ const Story: ComponentMeta<typeof FormContainer> = {
 
 export default Story;
 
-const Template: ComponentStory<typeof FormContainer> = (args) => (
+const Template: StoryFn<typeof FormContainer> = (args) => (
   <FormContainer padding="md" width={532} {...args}>
     <FormControl isRequired>
       <FormLabel>Manufacturer</FormLabel>

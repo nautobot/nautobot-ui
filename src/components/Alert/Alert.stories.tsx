@@ -1,4 +1,4 @@
-import type { ComponentStory, ComponentMeta } from '@storybook/react';
+import type { Meta, StoryFn } from '@storybook/react';
 import React from 'react';
 
 import {
@@ -11,10 +11,9 @@ import {
 } from '../..';
 import type { AlertProps } from '../..';
 
-const Story: ComponentMeta<typeof Alert> = {
+const Story: Meta<typeof Alert> = {
   argTypes: {
     status: {
-      defaultValue: 'info',
       type: {
         name: 'enum',
         required: false,
@@ -22,6 +21,7 @@ const Story: ComponentMeta<typeof Alert> = {
       },
     },
   },
+  args: { status: 'info' },
   component: Alert,
   parameters: { controls: { include: ['status'] } },
   title: 'Components/Alert',
@@ -29,7 +29,7 @@ const Story: ComponentMeta<typeof Alert> = {
 
 export default Story;
 
-const Template: ComponentStory<typeof Alert> = ({
+const Template: StoryFn<typeof Alert> = ({
   hasCloseButton,
   ...rest
 }: AlertProps & { hasCloseButton?: boolean }) => (

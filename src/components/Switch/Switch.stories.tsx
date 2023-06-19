@@ -1,19 +1,17 @@
-import type { ComponentStory, ComponentMeta } from '@storybook/react';
+import type { Meta, StoryFn } from '@storybook/react';
 import React, { useCallback, useState } from 'react';
 
 import { Flex, Switch } from '../..';
 import type { SwitchProps } from '../..';
 
-const Story: ComponentMeta<typeof Switch> = {
+const Story: Meta<typeof Switch> = {
   argTypes: {
-    isDisabled: {
-      defaultValue: false,
-      type: { name: 'boolean', required: false },
-    },
-    size: {
-      defaultValue: 'md',
-      type: { name: 'enum', required: false, value: ['sm', 'md'] },
-    },
+    isDisabled: { type: { name: 'boolean', required: false } },
+    size: { type: { name: 'enum', required: false, value: ['sm', 'md'] } },
+  },
+  args: {
+    isDisabled: false,
+    size: 'md',
   },
   component: Switch,
   title: 'Components/Switch',
@@ -21,7 +19,7 @@ const Story: ComponentMeta<typeof Switch> = {
 
 export default Story;
 
-const Template: ComponentStory<typeof Switch> = ({
+const Template: StoryFn<typeof Switch> = ({
   isChecked,
   ...restArgs
 }: SwitchProps) => {
@@ -46,15 +44,18 @@ export const Basic = Template.bind({});
 
 Basic.argTypes = {};
 
+Basic.args = {};
+
 Basic.parameters = { controls: { include: ['isDisabled', 'size'] } };
 
 export const Controlled = Template.bind({});
 
 Controlled.argTypes = {
-  isChecked: {
-    defaultValue: false,
-    type: { name: 'boolean', required: false },
-  },
+  isChecked: { type: { name: 'boolean', required: false } },
+};
+
+Controlled.args = {
+  isChecked: false,
 };
 
 Controlled.parameters = {

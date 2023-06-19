@@ -1,18 +1,18 @@
 import LinkTo from '@storybook/addon-links/react';
-import type { ComponentStory, ComponentMeta } from '@storybook/react';
+import type { Meta, StoryFn } from '@storybook/react';
 import React, { useCallback, useState } from 'react';
 
 import { Box, Code, Divider, Flex, Link, ReactSelectAsync, Text } from '../..';
 import type { ReactSelectOnChangeValue, ReactSelectPropsValue } from '../..';
 
-const Story: ComponentMeta<typeof ReactSelectAsync> = {
+const Story: Meta<typeof ReactSelectAsync> = {
   component: ReactSelectAsync,
   title: 'Components/ReactSelectAsync',
 };
 
 export default Story;
 
-const Template: ComponentStory<typeof ReactSelectAsync> = (args) => {
+const Template: StoryFn<typeof ReactSelectAsync> = (args) => {
   type Option = { label: string; value: string };
 
   const [value, setValue] = useState<ReactSelectPropsValue<Option>>([]);
@@ -71,32 +71,21 @@ const Template: ComponentStory<typeof ReactSelectAsync> = (args) => {
 export const Basic = Template.bind({});
 
 Basic.argTypes = {
-  cacheOptions: {
-    defaultValue: true,
-    type: { name: 'boolean', required: false },
-  },
-  closeMenuOnSelect: {
-    defaultValue: true,
-    type: { name: 'boolean', required: false },
-  },
-  hideSelectedOptions: {
-    defaultValue: false,
-    type: { name: 'boolean', required: false },
-  },
-  isDisabled: {
-    defaultValue: false,
-    type: { name: 'boolean', required: false },
-  },
-  isMulti: {
-    defaultValue: false,
-    type: { name: 'boolean', required: false },
-  },
-  multiValuesCropText: {
-    defaultValue: '{count} more...',
-    type: { name: 'string', required: false },
-  },
-  placeholder: {
-    defaultValue: 'Select...',
-    type: { name: 'string', required: false },
-  },
+  cacheOptions: { type: { name: 'boolean', required: false } },
+  closeMenuOnSelect: { type: { name: 'boolean', required: false } },
+  hideSelectedOptions: { type: { name: 'boolean', required: false } },
+  isDisabled: { type: { name: 'boolean', required: false } },
+  isMulti: { type: { name: 'boolean', required: false } },
+  multiValuesCropText: { type: { name: 'string', required: false } },
+  placeholder: { type: { name: 'string', required: false } },
+};
+
+Basic.args = {
+  cacheOptions: true,
+  closeMenuOnSelect: true,
+  hideSelectedOptions: false,
+  isDisabled: false,
+  isMulti: false,
+  multiValuesCropText: '{count} more...',
+  placeholder: 'Select...',
 };
