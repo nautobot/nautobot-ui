@@ -1,10 +1,5 @@
-import {
-  Box,
-  forwardRef,
-  ThemingProps,
-  useMultiStyleConfig,
-} from '@chakra-ui/react';
-import type { BoxProps } from '@chakra-ui/react';
+import { Box, forwardRef, useMultiStyleConfig } from '@chakra-ui/react';
+import type { BoxProps, ThemingProps } from '@chakra-ui/react';
 import React from 'react';
 
 export interface TreeEdgeProps extends BoxProps, ThemingProps<'TreeEdge'> {

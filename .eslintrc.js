@@ -28,6 +28,14 @@ module.exports = {
   ],
   root: true,
   rules: {
+    '@typescript-eslint/consistent-type-imports': [
+      'error',
+      {
+        prefer: 'type-imports',
+        disallowTypeAnnotations: true,
+        fixStyle: 'separate-type-imports',
+      },
+    ],
     '@typescript-eslint/no-empty-interface': [
       'error',
       {
