@@ -1,4 +1,4 @@
-import type { ComponentMeta, ComponentStory } from '@storybook/react';
+import type { Meta, StoryFn } from '@storybook/react';
 import React, { forwardRef } from 'react';
 import type { HTMLProps } from 'react';
 
@@ -35,7 +35,7 @@ import {
 } from '../..';
 import type { NavbarProps } from '../..';
 
-const Story: ComponentMeta<typeof Navbar> = {
+const Story: Meta<typeof Navbar> = {
   component: Navbar,
   title: 'Components/Navbar',
 };
@@ -53,7 +53,7 @@ const MockedReactRouterLink = forwardRef<
 
 MockedReactRouterLink.displayName = 'ReactRouterLink';
 
-const Template: ComponentStory<typeof Navbar> = (args: NavbarProps) => (
+const Template: StoryFn<typeof Navbar> = (args: NavbarProps) => (
   <Navbar {...args}>
     <NavbarLogo as={MockedReactRouterLink} to="/">
       <NautobotLogoIcon />
@@ -116,8 +116,9 @@ const Template: ComponentStory<typeof Navbar> = (args: NavbarProps) => (
 export const Basic = Template.bind({});
 
 Basic.argTypes = {
-  size: {
-    defaultValue: 'lg',
-    type: { name: 'enum', required: false, value: ['md', 'lg'] },
-  },
+  size: { type: { name: 'enum', required: false, value: ['md', 'lg'] } },
+};
+
+Basic.args = {
+  size: 'lg',
 };

@@ -1,4 +1,4 @@
-import type { ComponentStory, ComponentMeta } from '@storybook/react';
+import type { Meta, StoryFn } from '@storybook/react';
 import React from 'react';
 
 import {
@@ -13,14 +13,14 @@ import {
   useDisclosure,
 } from '../..';
 
-const Story: ComponentMeta<typeof Modal> = {
+const Story: Meta<typeof Modal> = {
   component: Modal,
   title: 'Components/Modal',
 };
 
 export default Story;
 
-const Template: ComponentStory<typeof Modal> = () => {
+const Template: StoryFn<typeof Modal> = () => {
   const { isOpen, onClose, onOpen } = useDisclosure();
 
   return (

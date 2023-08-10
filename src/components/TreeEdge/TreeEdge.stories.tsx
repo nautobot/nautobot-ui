@@ -1,16 +1,16 @@
-import type { ComponentStory, ComponentMeta } from '@storybook/react';
+import type { Meta, StoryFn } from '@storybook/react';
 import React from 'react';
 
 import { Flex, Text, TreeEdge } from '../..';
 
-const Story: ComponentMeta<typeof TreeEdge> = {
+const Story: Meta<typeof TreeEdge> = {
   component: TreeEdge,
   title: 'Components/TreeEdge',
 };
 
 export default Story;
 
-const Template: ComponentStory<typeof TreeEdge> = (args) =>
+const Template: StoryFn<typeof TreeEdge> = (args) =>
   args.variant !== undefined ? (
     <Flex height="44px">
       <TreeEdge {...args} />
@@ -39,7 +39,6 @@ export const Basic = Template.bind({});
 
 Basic.argTypes = {
   variant: {
-    defaultValue: 'default',
     type: {
       name: 'enum',
       value: [
@@ -55,6 +54,10 @@ Basic.argTypes = {
       required: false,
     },
   },
+};
+
+Basic.args = {
+  variant: 'default',
 };
 
 Basic.parameters = { controls: { include: ['variant'] } };

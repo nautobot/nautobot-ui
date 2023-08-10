@@ -1,4 +1,4 @@
-import type { ComponentStory, ComponentMeta } from '@storybook/react';
+import type { Meta, StoryFn } from '@storybook/react';
 import React, { useEffect, useState } from 'react';
 
 import {
@@ -10,14 +10,14 @@ import {
   Heading,
 } from '../..';
 
-const Story: ComponentMeta<typeof Accordion> = {
+const Story: Meta<typeof Accordion> = {
   component: Accordion,
   title: 'Components/Accordion',
 };
 
 export default Story;
 
-const Template: ComponentStory<typeof Accordion> = (args) => {
+const Template: StoryFn<typeof Accordion> = (args) => {
   const [key, setKey] = useState(0);
 
   /*
@@ -83,22 +83,21 @@ const Template: ComponentStory<typeof Accordion> = (args) => {
 export const Basic = Template.bind({});
 
 Basic.argTypes = {
-  allowMultiple: {
-    defaultValue: false,
-    type: { name: 'boolean', required: false },
-  },
-  allowToggle: {
-    defaultValue: false,
-    type: { name: 'boolean', required: false },
-  },
+  allowMultiple: { type: { name: 'boolean', required: false } },
+  allowToggle: { type: { name: 'boolean', required: false } },
   variant: {
-    defaultValue: 'default',
     type: {
       name: 'enum',
       required: false,
       value: ['default', 'sidebarLevel0', 'sidebarLevel1'],
     },
   },
+};
+
+Basic.args = {
+  allowMultiple: false,
+  allowToggle: false,
+  variant: 'default',
 };
 
 Basic.parameters = {

@@ -1,4 +1,4 @@
-import type { ComponentStory, ComponentMeta } from '@storybook/react';
+import type { Meta, StoryFn } from '@storybook/react';
 import React, { useCallback, useState } from 'react';
 import type { ChangeEvent, ReactElement } from 'react';
 
@@ -12,17 +12,15 @@ import {
 import type { InputProps } from '../..';
 import * as icons from '../../icons';
 
-const Story: ComponentMeta<typeof Input> = {
-  args: { placeholder: 'Write here...' },
+const Story: Meta<typeof Input> = {
+  args: {
+    isDisabled: false,
+    isInvalid: false,
+    placeholder: 'Write here...',
+  },
   argTypes: {
-    isDisabled: {
-      defaultValue: false,
-      type: { name: 'boolean', required: false },
-    },
-    isInvalid: {
-      defaultValue: false,
-      type: { name: 'boolean', required: false },
-    },
+    isDisabled: { type: { name: 'boolean', required: false } },
+    isInvalid: { type: { name: 'boolean', required: false } },
   },
   component: Input,
   title: 'Components/Input',
@@ -35,7 +33,7 @@ interface Props extends InputProps {
   rightElement?: '' | keyof typeof icons;
 }
 
-const Template: ComponentStory<(props: Props) => ReactElement> = ({
+const Template: StoryFn<(props: Props) => ReactElement> = ({
   leftElement,
   rightElement,
   value,
@@ -96,11 +94,16 @@ export const WithElements = Template.bind({});
 
 WithElements.argTypes = {
   leftElement: {
-    defaultValue: Object.keys(icons).find((icon) => icon === 'SearchIcon'),
     type: { name: 'enum', required: false, value: Object.keys(icons) },
   },
   rightElement: {
-    defaultValue: '',
     type: { name: 'enum', required: false, value: Object.keys(icons) },
   },
+};
+
+WithElements.args = {
+  leftElement: Object.keys(icons).find(
+    (icon) => icon === 'SearchIcon'
+  ) as keyof typeof icons,
+  rightElement: '',
 };

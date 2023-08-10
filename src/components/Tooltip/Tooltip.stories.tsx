@@ -1,4 +1,4 @@
-import type { ComponentStory, ComponentMeta } from '@storybook/react';
+import type { Meta, StoryFn } from '@storybook/react';
 import React from 'react';
 import type { ReactElement } from 'react';
 
@@ -12,26 +12,13 @@ import {
 } from '../..';
 import type { TooltipProps } from '../..';
 
-const Story: ComponentMeta<typeof Tooltip> = {
+const Story: Meta<typeof Tooltip> = {
   argTypes: {
-    hasArrow: {
-      defaultValue: true,
-      type: { name: 'boolean', required: false },
-    },
-    isOpen: {
-      defaultValue: undefined,
-      type: { name: 'boolean', required: false },
-    },
-    openDelay: {
-      defaultValue: 0,
-      type: { name: 'number', required: false },
-    },
-    closeDelay: {
-      defaultValue: 0,
-      type: { name: 'number', required: false },
-    },
+    hasArrow: { type: { name: 'boolean', required: false } },
+    isOpen: { type: { name: 'boolean', required: false } },
+    openDelay: { type: { name: 'number', required: false } },
+    closeDelay: { type: { name: 'number', required: false } },
     placement: {
-      defaultValue: 'bottom',
       type: {
         name: 'enum',
         required: false,
@@ -55,6 +42,13 @@ const Story: ComponentMeta<typeof Tooltip> = {
       },
     },
   },
+  args: {
+    closeDelay: 0,
+    hasArrow: true,
+    isOpen: undefined,
+    openDelay: 0,
+    placement: 'bottom',
+  },
   component: Tooltip,
   parameters: { controls: { exclude: 'type' } },
   title: 'Components/Tooltip',
@@ -62,7 +56,7 @@ const Story: ComponentMeta<typeof Tooltip> = {
 
 export default Story;
 
-const Template: ComponentStory<
+const Template: StoryFn<
   (props: { type: 'button' | 'text' } & TooltipProps) => ReactElement
 > = ({ type, ...args }: { type: 'button' | 'text' } & TooltipProps) => (
   <Tooltip {...args}>

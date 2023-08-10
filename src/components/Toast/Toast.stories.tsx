@@ -1,5 +1,5 @@
 import LinkTo from '@storybook/addon-links/react';
-import type { ComponentStory, ComponentMeta } from '@storybook/react';
+import type { Meta, StoryFn } from '@storybook/react';
 import React, { useCallback } from 'react';
 
 import { Button, Code, Divider, Flex, Link, Text, useToast } from '../..';
@@ -8,14 +8,14 @@ import type { UseToastOptions } from '../..';
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 const Toast = (props: UseToastOptions) => null;
 
-const Story: ComponentMeta<typeof Toast> = {
+const Story: Meta<typeof Toast> = {
   component: Toast,
   title: 'Components/Toast',
 };
 
 export default Story;
 
-const Template: ComponentStory<typeof Toast> = (args: UseToastOptions) => {
+const Template: StoryFn<typeof Toast> = (args: UseToastOptions) => {
   const toast = useToast({ ...args });
 
   const onClick = useCallback(() => toast(), [toast]);
@@ -63,18 +63,9 @@ const Template: ComponentStory<typeof Toast> = (args: UseToastOptions) => {
 export const Basic = Template.bind({});
 
 Basic.argTypes = {
-  duration: {
-    defaultValue: 5000,
-    type: { name: 'number', required: false },
-  },
-
-  isClosable: {
-    defaultValue: true,
-    type: { name: 'boolean', required: false },
-  },
-
+  duration: { type: { name: 'number', required: false } },
+  isClosable: { type: { name: 'boolean', required: false } },
   position: {
-    defaultValue: 'top-right',
     type: {
       name: 'enum',
       required: false,
@@ -88,9 +79,7 @@ Basic.argTypes = {
       ],
     },
   },
-
   status: {
-    defaultValue: 'info',
     type: {
       name: 'enum',
       required: false,
@@ -101,5 +90,9 @@ Basic.argTypes = {
 
 Basic.args = {
   description: 'Message',
+  duration: 5000,
+  isClosable: true,
+  position: 'top-right',
+  status: 'info',
   title: 'Title',
 };
