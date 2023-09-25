@@ -3,12 +3,10 @@ import type { ThemingProps } from '@chakra-ui/react';
 import React, { useEffect, useMemo, useRef, useState } from 'react';
 import type { ReactNode } from 'react';
 
-import {
-  SidebarCollapseButton,
-  SidebarContainer,
-  SidebarContent,
-  SidebarContextProvider,
-} from './';
+import SidebarCollapseButton from './SidebarCollapseButton';
+import SidebarContainer from './SidebarContainer';
+import SidebarContent from './SidebarContent';
+import { SidebarContextProvider } from './SidebarContext';
 
 export interface SidebarProps extends ThemingProps<'Sidebar'> {
   children?: ReactNode;

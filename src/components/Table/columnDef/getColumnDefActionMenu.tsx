@@ -24,7 +24,7 @@ const getColumnDefActionMenu = <Datum extends object, TValue = any>({
     ActionMenu ? <ActionMenu cellContext={cellContext} /> : null,
 
   header: ({ table }: HeaderContext<Datum, TValue>) => (
-    <Menu closeOnSelect={false} placement="bottom-end">
+    <Menu closeOnSelect={false} placement="bottom-end" strategy="fixed">
       <MenuButton
         _active={{ background: 'blue-10%' }}
         _focusVisible={{ background: 'blue-10%' }}
@@ -39,7 +39,7 @@ const getColumnDefActionMenu = <Datum extends object, TValue = any>({
         paddingY={calc.subtract(getCssVar('space.12').reference, '1px')}
         variant="unstyled"
       />
-      <MenuList>
+      <MenuList restrictToViewport>
         <MenuOptionGroup
           type="checkbox"
           value={table.getVisibleLeafColumns().map(({ id }) => id)}

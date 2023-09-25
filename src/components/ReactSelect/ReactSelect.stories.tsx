@@ -1,18 +1,18 @@
 import LinkTo from '@storybook/addon-links/react';
-import type { ComponentStory, ComponentMeta } from '@storybook/react';
+import type { Meta, StoryFn } from '@storybook/react';
 import React, { useCallback, useMemo, useState } from 'react';
 
 import { Box, Code, Divider, Flex, Link, ReactSelect, Text } from '../..';
 import type { ReactSelectOnChangeValue, ReactSelectPropsValue } from '../..';
 
-const Story: ComponentMeta<typeof ReactSelect> = {
+const Story: Meta<typeof ReactSelect> = {
   component: ReactSelect,
   title: 'Components/ReactSelect',
 };
 
 export default Story;
 
-const Template: ComponentStory<typeof ReactSelect> = (args) => {
+const Template: StoryFn<typeof ReactSelect> = (args) => {
   const options = useMemo(
     () =>
       Array.from({ length: 8 }).map((_, index) => ({
@@ -69,32 +69,21 @@ const Template: ComponentStory<typeof ReactSelect> = (args) => {
 export const Basic = Template.bind({});
 
 Basic.argTypes = {
-  closeMenuOnSelect: {
-    defaultValue: true,
-    type: { name: 'boolean', required: false },
-  },
-  hideSelectedOptions: {
-    defaultValue: false,
-    type: { name: 'boolean', required: false },
-  },
-  isDisabled: {
-    defaultValue: false,
-    type: { name: 'boolean', required: false },
-  },
-  isMulti: {
-    defaultValue: false,
-    type: { name: 'boolean', required: false },
-  },
-  isSearchable: {
-    defaultValue: false,
-    type: { name: 'boolean', required: false },
-  },
-  multiValuesCropText: {
-    defaultValue: '{count} more...',
-    type: { name: 'string', required: false },
-  },
-  placeholder: {
-    defaultValue: 'Select...',
-    type: { name: 'string', required: false },
-  },
+  closeMenuOnSelect: { type: { name: 'boolean', required: false } },
+  hideSelectedOptions: { type: { name: 'boolean', required: false } },
+  isDisabled: { type: { name: 'boolean', required: false } },
+  isMulti: { type: { name: 'boolean', required: false } },
+  isSearchable: { type: { name: 'boolean', required: false } },
+  multiValuesCropText: { type: { name: 'string', required: false } },
+  placeholder: { type: { name: 'string', required: false } },
+};
+
+Basic.args = {
+  closeMenuOnSelect: true,
+  hideSelectedOptions: false,
+  isDisabled: false,
+  isMulti: false,
+  isSearchable: false,
+  multiValuesCropText: '{count} more...',
+  placeholder: 'Select...',
 };

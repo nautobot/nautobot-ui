@@ -1,4 +1,4 @@
-import type { ComponentStory, ComponentMeta } from '@storybook/react';
+import type { Meta, StoryFn } from '@storybook/react';
 import React from 'react';
 
 import {
@@ -11,14 +11,14 @@ import {
   PopoverTrigger,
 } from '../..';
 
-const Story: ComponentMeta<typeof Popover> = {
+const Story: Meta<typeof Popover> = {
   component: Popover,
   title: 'Components/Popover',
 };
 
 export default Story;
 
-const Template: ComponentStory<typeof Popover> = (args) => (
+const Template: StoryFn<typeof Popover> = (args) => (
   <Popover {...args}>
     <PopoverTrigger>
       <Button>Open</Button>
@@ -50,11 +50,14 @@ export const Basic = Template.bind({});
 
 Basic.argTypes = {
   variant: {
-    defaultValue: 'docked',
     type: {
       name: 'enum',
       required: false,
       value: ['docked', 'docked+1', 'docked+2'],
     },
   },
+};
+
+Basic.args = {
+  variant: 'docked',
 };

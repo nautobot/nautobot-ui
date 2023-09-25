@@ -1,4 +1,4 @@
-import type { ComponentStory, ComponentMeta } from '@storybook/react';
+import type { Meta, StoryFn } from '@storybook/react';
 import React from 'react';
 
 import {
@@ -21,14 +21,14 @@ import {
   SearchIcon,
 } from '../..';
 
-const Story: ComponentMeta<typeof Menu> = {
+const Story: Meta<typeof Menu> = {
   component: Menu,
   title: 'Components/Menu',
 };
 
 export default Story;
 
-const Template: ComponentStory<typeof Menu> = (args) => (
+const Template: StoryFn<typeof Menu> = (args) => (
   <Menu {...args}>
     <MenuButton as={Button} rightIcon={<ArrowDownIcon />}>
       Actions
@@ -67,12 +67,11 @@ const Template: ComponentStory<typeof Menu> = (args) => (
 export const Basic = Template.bind({});
 
 Basic.argTypes = {
-  closeOnBlur: {
-    defaultValue: true,
-    type: { name: 'boolean', required: false },
-  },
-  closeOnSelect: {
-    defaultValue: true,
-    type: { name: 'boolean', required: false },
-  },
+  closeOnBlur: { type: { name: 'boolean', required: false } },
+  closeOnSelect: { type: { name: 'boolean', required: false } },
+};
+
+Basic.args = {
+  closeOnBlur: true,
+  closeOnSelect: true,
 };

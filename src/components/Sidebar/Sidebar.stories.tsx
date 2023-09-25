@@ -1,4 +1,4 @@
-import type { ComponentStory, ComponentMeta } from '@storybook/react';
+import type { Meta, StoryFn } from '@storybook/react';
 import React from 'react';
 
 import {
@@ -16,20 +16,16 @@ import {
   SidebarButton,
 } from '../..';
 
-const Story: ComponentMeta<typeof Sidebar> = {
-  argTypes: {
-    isCollapsible: {
-      defaultValue: false,
-      type: { name: 'boolean', required: false },
-    },
-  },
+const Story: Meta<typeof Sidebar> = {
+  argTypes: { isCollapsible: { type: { name: 'boolean', required: false } } },
+  args: { isCollapsible: false },
   component: Sidebar,
   title: 'Components/Sidebar',
 };
 
 export default Story;
 
-const Template: ComponentStory<typeof Sidebar> = (args) => (
+const Template: StoryFn<typeof Sidebar> = (args) => (
   <Box height="600px">
     <Sidebar {...args}>
       <Heading as="h1" paddingBottom="md" paddingTop="29px" paddingX="md">

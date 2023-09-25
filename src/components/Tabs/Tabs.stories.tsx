@@ -1,4 +1,4 @@
-import type { ComponentStory, ComponentMeta } from '@storybook/react';
+import type { Meta, StoryFn } from '@storybook/react';
 import React, { useState } from 'react';
 
 import {
@@ -11,14 +11,14 @@ import {
   Tabs,
 } from '../..';
 
-const Story: ComponentMeta<typeof Tabs> = {
+const Story: Meta<typeof Tabs> = {
   component: Tabs,
   title: 'Components/Tabs',
 };
 
 export default Story;
 
-const Template: ComponentStory<typeof Tabs> = (args) => {
+const Template: StoryFn<typeof Tabs> = (args) => {
   const [tabIndex, setTabIndex] = useState(0);
 
   return (
@@ -71,7 +71,10 @@ export const Basic = Template.bind({});
 
 Basic.argTypes = {
   variant: {
-    defaultValue: 'default',
     type: { name: 'enum', required: false, value: ['default', 'outline'] },
   },
+};
+
+Basic.args = {
+  variant: 'default',
 };

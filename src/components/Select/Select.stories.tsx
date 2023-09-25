@@ -1,23 +1,19 @@
 import LinkTo from '@storybook/addon-links/react';
-import type { ComponentStory, ComponentMeta } from '@storybook/react';
+import type { Meta, StoryFn } from '@storybook/react';
 import React from 'react';
 
 import { Box, Code, Divider, Flex, Link, Select, Text } from '../..';
 
-const Story: ComponentMeta<typeof Select> = {
+const Story: Meta<typeof Select> = {
   argTypes: {
-    isDisabled: {
-      defaultValue: false,
-      type: { name: 'boolean', required: false },
-    },
-    isInvalid: {
-      defaultValue: false,
-      type: { name: 'boolean', required: false },
-    },
-    placeholder: {
-      defaultValue: 'Select...',
-      type: { name: 'string', required: false },
-    },
+    isDisabled: { type: { name: 'boolean', required: false } },
+    isInvalid: { type: { name: 'boolean', required: false } },
+    placeholder: { type: { name: 'string', required: false } },
+  },
+  args: {
+    isDisabled: false,
+    isInvalid: false,
+    placeholder: 'Select...',
   },
   component: Select,
   title: 'Components/Select',
@@ -25,7 +21,7 @@ const Story: ComponentMeta<typeof Select> = {
 
 export default Story;
 
-const Template: ComponentStory<typeof Select> = (args) => (
+const Template: StoryFn<typeof Select> = (args) => (
   <Flex direction="column" gap="sm">
     <Text>
       This is a native browser <Code>{'<select>'}</Code> element. If you are
@@ -63,13 +59,16 @@ export const Controlled = Template.bind({});
 
 Controlled.argTypes = {
   value: {
-    defaultValue: '',
     type: {
       name: 'enum',
       required: false,
       value: ['arista', 'cisco', 'meraki'],
     },
   },
+};
+
+Controlled.args = {
+  value: '',
 };
 
 Controlled.parameters = {

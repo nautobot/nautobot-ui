@@ -1,16 +1,16 @@
-import type { ComponentStory, ComponentMeta } from '@storybook/react';
+import type { Meta, StoryFn } from '@storybook/react';
 import React from 'react';
 
 import { Divider, Flex } from '../..';
 
-const Story: ComponentMeta<typeof Divider> = {
+const Story: Meta<typeof Divider> = {
   component: Divider,
   title: 'Components/Divider',
 };
 
 export default Story;
 
-const Template: ComponentStory<typeof Divider> = (args) => (
+const Template: StoryFn<typeof Divider> = (args) => (
   <Flex
     align="center"
     background="white-0"
@@ -27,7 +27,10 @@ export const Basic = Template.bind({});
 
 Basic.argTypes = {
   orientation: {
-    defaultValue: 'horizontal',
     type: { name: 'enum', value: ['horizontal', 'vertical'], required: false },
   },
+};
+
+Basic.args = {
+  orientation: 'horizontal',
 };

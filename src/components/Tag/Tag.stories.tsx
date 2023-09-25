@@ -1,17 +1,17 @@
-import type { ComponentStory, ComponentMeta } from '@storybook/react';
+import type { Meta, StoryFn } from '@storybook/react';
 import React from 'react';
 
 import { Flex, Tag, TagCloseButton, TagLabel } from '../..';
 import type { TagProps } from '../..';
 
-const Story: ComponentMeta<typeof Tag> = {
+const Story: Meta<typeof Tag> = {
   component: Tag,
   title: 'Components/Tag',
 };
 
 export default Story;
 
-const Template: ComponentStory<typeof Tag> = ({
+const Template: StoryFn<typeof Tag> = ({
   children, // eslint-disable-line @typescript-eslint/no-unused-vars
   isDisabled,
   ...restArgs
@@ -37,16 +37,9 @@ const Template: ComponentStory<typeof Tag> = ({
 export const Basic = Template.bind({});
 
 Basic.argTypes = {
-  isDisabled: {
-    defaultValue: false,
-    type: { name: 'boolean', required: false },
-  },
-  size: {
-    defaultValue: 'md',
-    type: { name: 'enum', required: false, value: ['sm', 'md'] },
-  },
+  isDisabled: { type: { name: 'boolean', required: false } },
+  size: { type: { name: 'enum', required: false, value: ['sm', 'md'] } },
   variant: {
-    defaultValue: 'default',
     type: {
       name: 'enum',
       required: false,
@@ -61,4 +54,10 @@ Basic.argTypes = {
       ],
     },
   },
+};
+
+Basic.args = {
+  isDisabled: false,
+  size: 'md',
+  variant: 'default',
 };

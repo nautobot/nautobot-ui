@@ -5,7 +5,7 @@ import React, { useCallback } from 'react';
 import { ArrowLeftIcon, Button } from '../..';
 import type { ButtonProps } from '../..';
 
-import { useSidebarContext } from './';
+import { useSidebarContext } from './SidebarContext';
 
 export interface SidebarCollapseButtonProps extends ButtonProps {}
 

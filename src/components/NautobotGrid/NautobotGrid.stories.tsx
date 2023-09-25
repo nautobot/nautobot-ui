@@ -1,12 +1,13 @@
-import type { ComponentMeta, ComponentStory } from '@storybook/react';
+import type { Meta, StoryFn } from '@storybook/react';
 import React from 'react';
+import type { ReactElement } from 'react';
 
 import { NautobotGrid, NautobotGridItem } from '../..';
 import type { NautobotGridItemProps, NautobotGridProps } from '../..';
 
 import { StoryContent } from './utils';
 
-const Story: ComponentMeta<typeof NautobotGrid> = {
+const Story: Meta<typeof NautobotGrid> = {
   component: NautobotGrid,
   parameters: { layout: 'fullscreen' },
   title: 'Components/NautobotGrid',
@@ -14,7 +15,7 @@ const Story: ComponentMeta<typeof NautobotGrid> = {
 
 export default Story;
 
-const Template: ComponentStory<
+const Template: StoryFn<
   (
     props: NautobotGridProps & {
       children?: NautobotGridItemProps[];
@@ -56,33 +57,27 @@ export const Basic = Template.bind({});
 
 Basic.argTypes = {
   childrenCount: {
-    defaultValue: 3,
     name: 'childrenCount (Storybook only, for demonstration purposes.)',
     type: { name: 'number', required: false },
   },
+  columns: { type: { name: 'string', required: false } },
+  rows: { type: { name: 'string', required: false } },
+};
 
-  columns: {
-    defaultValue: '1 1 2',
-    type: { name: 'string', required: false },
-  },
-
-  rows: {
-    defaultValue: '',
-    type: { name: 'string', required: false },
-  },
+Basic.args = {
+  childrenCount: 3,
+  columns: '1 1 2',
 };
 
 export const WithCellConfig = Template.bind({});
 
 WithCellConfig.argTypes = {
   childrenCount: {
-    defaultValue: 3,
     name: 'childrenCount (Storybook only, for demonstration purposes.)',
     type: { name: 'number', required: false },
   },
 
   columns: {
-    defaultValue: { span: '1 1 2' },
     type: {
       name: 'object',
       required: false,
@@ -91,7 +86,6 @@ WithCellConfig.argTypes = {
   },
 
   rows: {
-    defaultValue: {},
     type: {
       name: 'object',
       required: false,
@@ -100,11 +94,16 @@ WithCellConfig.argTypes = {
   },
 };
 
+WithCellConfig.args = {
+  childrenCount: 3,
+  columns: { span: '1 1 2' },
+  rows: {},
+};
+
 export const WithNautobotGridItems = Template.bind({});
 
 WithNautobotGridItems.argTypes = {
   children: {
-    defaultValue: [{}, {}, {}, {}, { colSpan: 4, rowSpan: 3 }],
     name: 'children (Storybook only, for demonstration purposes.)',
     type: {
       name: 'array',
@@ -117,7 +116,6 @@ WithNautobotGridItems.argTypes = {
   },
 
   columns: {
-    defaultValue: {},
     type: {
       name: 'object',
       required: false,
@@ -126,11 +124,16 @@ WithNautobotGridItems.argTypes = {
   },
 
   rows: {
-    defaultValue: { count: 4 },
     type: {
       name: 'object',
       required: false,
       value: { count: { name: 'number' }, span: { name: 'string' } },
     },
   },
+};
+
+WithNautobotGridItems.args = {
+  children: [{}, {}, {}, {}, { colSpan: 4, rowSpan: 3 }] as ReactElement[],
+  columns: {},
+  rows: { count: 4 },
 };

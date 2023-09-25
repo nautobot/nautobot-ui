@@ -1,18 +1,19 @@
-import type { ComponentStory, ComponentMeta } from '@storybook/react';
+import type { Meta, StoryFn } from '@storybook/react';
 import React from 'react';
+import type { ReactElement } from 'react';
 
 import { Link } from '../..';
 import type { LinkProps } from '../..';
 import * as icons from '../../icons';
 
-const Story: ComponentMeta<typeof Link> = {
+const Story: Meta<typeof Link> = {
   component: Link,
   title: 'Components/Link',
 };
 
 export default Story;
 
-const Template: ComponentStory<typeof Link> = ({
+const Template: StoryFn<typeof Link> = ({
   leftIcon,
   rightIcon,
   ...restArgs
@@ -33,28 +34,28 @@ export const Basic = Template.bind({});
 
 Basic.argTypes = {
   variant: {
-    defaultValue: 'default',
     type: { name: 'enum', value: ['default', 'Mono1'], required: false },
   },
   isExternal: {
-    defaultValue: false,
     description:
       'Behaves the same way as target="_blank", i.e. opens the page in a new tab',
     type: { name: 'boolean', required: false },
   },
   leftIcon: {
-    defaultValue: '',
     type: { name: 'enum', value: Object.keys(icons), required: false },
   },
   rightIcon: {
-    defaultValue: '',
     type: { name: 'enum', value: Object.keys(icons), required: false },
   },
 };
 
 Basic.args = {
   children: 'Example',
+  isExternal: false,
   href: 'https://www.networktocode.com/',
+  leftIcon: '' as unknown as ReactElement,
+  rightIcon: '' as unknown as ReactElement,
+  variant: 'default',
 };
 
 Basic.parameters = {

@@ -1,5 +1,5 @@
 import { Flex, Tag, TagLabel } from '@chakra-ui/react';
-import type { ComponentStory, ComponentMeta } from '@storybook/react';
+import type { Meta, StoryFn } from '@storybook/react';
 import { createColumnHelper } from '@tanstack/react-table';
 import type { CellContext } from '@tanstack/react-table';
 import React, { useCallback, useMemo } from 'react';
@@ -20,8 +20,8 @@ import {
 } from '../..';
 import type { UseTableRendererProps } from '../..';
 
-const Story: ComponentMeta<typeof Table> = {
-  component: TableRendererComponent,
+const Story: Meta<typeof Table> = {
+  component: Table,
   title: 'Components/Table',
 };
 
@@ -39,7 +39,7 @@ interface Props
   hideTableHeader?: boolean;
 }
 
-const Template: ComponentStory<(props: Props) => ReactElement> = ({
+const Template: StoryFn<(props: Props) => ReactElement> = ({
   disableRowHover,
   hideTableHeader,
   ...restArgs
@@ -179,19 +179,22 @@ export const TableRenderer = Template.bind({});
 
 TableRenderer.argTypes = {
   enableMultiRowSelection: {
-    defaultValue: false,
     type: { name: 'boolean', required: false },
   },
   disableRowHover: {
-    defaultValue: false,
     name: 'meta.disableRowHover',
     type: { name: 'boolean', required: false },
   },
   hideTableHeader: {
-    defaultValue: false,
     name: 'meta.hideTableHeader',
     type: { name: 'boolean', required: false },
   },
+};
+
+TableRenderer.args = {
+  enableMultiRowSelection: false,
+  disableRowHover: false,
+  hideTableHeader: false,
 };
 
 TableRenderer.parameters = {

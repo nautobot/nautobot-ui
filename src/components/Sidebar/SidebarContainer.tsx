@@ -2,7 +2,7 @@ import { Box, forwardRef } from '@chakra-ui/react';
 import type { BoxProps } from '@chakra-ui/react';
 import React from 'react';
 
-import { useSidebarContext } from './';
+import { useSidebarContext } from './SidebarContext';
 
 export interface SidebarContainerProps extends BoxProps {}
 

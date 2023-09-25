@@ -1,20 +1,17 @@
-import type { ComponentStory, ComponentMeta } from '@storybook/react';
+import type { Meta, StoryFn } from '@storybook/react';
 import React from 'react';
 
 import { Flex, Frame, Text } from '../..';
 import type { FrameProps } from '../..';
 
-const Story: ComponentMeta<typeof Frame> = {
+const Story: Meta<typeof Frame> = {
   component: Frame,
   title: 'Components/Frame',
 };
 
 export default Story;
 
-const Template: ComponentStory<typeof Frame> = ({
-  children,
-  ...args
-}: FrameProps) => (
+const Template: StoryFn<typeof Frame> = ({ children, ...args }: FrameProps) => (
   <Flex align="center" justify="center">
     <Text position="absolute" top={0} width={532}>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur libero
@@ -37,11 +34,13 @@ export const Basic = Template.bind({});
 
 Basic.argTypes = {
   variant: {
-    defaultValue: 'default',
     type: { name: 'enum', required: false, value: ['default', 'light'] },
   },
 };
 
-Basic.args = { children: 'Lorem ipsum dolor sit amet...' };
+Basic.args = {
+  children: 'Lorem ipsum dolor sit amet...',
+  variant: 'default',
+};
 
 Basic.parameters = { controls: { include: ['variant'] } };

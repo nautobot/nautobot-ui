@@ -1,29 +1,25 @@
-import type { ComponentStory, ComponentMeta } from '@storybook/react';
+import type { Meta, StoryFn } from '@storybook/react';
 import React from 'react';
 
 import { Heading } from '../..';
 import { colors, fontWeights } from '../../foundations';
 
-const Story: ComponentMeta<typeof Heading> = {
+const Story: Meta<typeof Heading> = {
   component: Heading,
   title: 'Components/Heading',
 };
 
 export default Story;
 
-const Template: ComponentStory<typeof Heading> = (args) => (
-  <Heading {...args} />
-);
+const Template: StoryFn<typeof Heading> = (args) => <Heading {...args} />;
 
 export const Basic = Template.bind({});
 
 Basic.argTypes = {
   size: {
-    defaultValue: 'H2',
     type: { name: 'enum', value: ['H1', 'H2', 'H3'], required: false },
   },
   as: {
-    defaultValue: 'h2',
     type: {
       name: 'enum',
       value: ['h1', 'h2', 'h3', 'h4', 'h5', 'h6'],
@@ -31,15 +27,17 @@ Basic.argTypes = {
     },
   },
   fontWeight: {
-    defaultValue: 'normal',
     type: { name: 'enum', value: Object.keys(fontWeights), required: false },
   },
   color: {
-    defaultValue: 'black-0',
     type: { name: 'enum', value: Object.keys(colors), required: false },
   },
 };
 
 Basic.args = {
+  as: 'h2',
   children: 'Example',
+  color: 'black-0',
+  fontWeight: 'normal',
+  size: 'H2',
 };
