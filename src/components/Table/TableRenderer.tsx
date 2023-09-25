@@ -13,7 +13,11 @@ import Td from './Td';
 import Th from './Th';
 import Thead from './Thead';
 import Tr from './Tr';
-import { getCellStickyProps, useTableScrollPosition } from './utils';
+import {
+  getCellStickyProps,
+  getOverlayStyle,
+  useTableScrollPosition,
+} from './utils';
 
 export interface TableRendererProps<Datum extends object> extends TableProps {
   table: ReturnType<typeof useReactTable<Datum>>;
@@ -27,13 +31,28 @@ const TableRenderer = <Datum extends object>({
 }: TableRendererProps<Datum>) => {
   const tableContainerRef = useRef<HTMLDivElement>(null);
 
-  const { isTableScrolledToTheLeft, isTableScrolledToTheRight } =
-    useTableScrollPosition(tableContainerRef);
+  const hideTableHeader = Boolean(table.options.meta?.hideTableHeader);
+
+  const {
+    isTableScrolledToTheBottom,
+    isTableScrolledToTheLeft,
+    isTableScrolledToTheRight,
+    isTableScrolledToTheTop,
+  } = useTableScrollPosition(tableContainerRef);
 
   return (
-    <TableContainer ref={tableContainerRef} {...containerProps}>
+    <TableContainer
+      ref={tableContainerRef}
+      _after={getOverlayStyle('bottom', !isTableScrolledToTheBottom)}
+      _before={getOverlayStyle(
+        'top',
+        !isTableScrolledToTheTop,
+        hideTableHeader ? { top: 0 } : undefined
+      )}
+      {...containerProps}
+    >
       <Table {...rest}>
-        {table.options.meta?.hideTableHeader ? null : (
+        {hideTableHeader ? null : (
           <Thead>
             {table.getHeaderGroups().map(({ headers, id }) => (
               <Tr key={id}>
@@ -49,15 +68,13 @@ const TableRenderer = <Datum extends object>({
                           padding: 0,
                         }
                       : undefined),
-                    ...getCellStickyProps(
-                      {
-                        columnId: column.id,
-                        isTableScrolledToTheLeft,
-                        isTableScrolledToTheRight,
-                        table,
-                      },
-                      { zIndex: 2 }
-                    ),
+                    ...getCellStickyProps({
+                      columnId: column.id,
+                      isTableScrolledToTheLeft,
+                      isTableScrolledToTheRight,
+                      isTh: true,
+                      table,
+                    }),
                   };
 
                   return column.columnDef.meta?.disableSorting ? (
@@ -148,6 +165,7 @@ const TableRenderer = <Datum extends object>({
                     columnId: column.id,
                     isTableScrolledToTheLeft,
                     isTableScrolledToTheRight,
+                    isTh: false,
                     table,
                   })}
                 >
