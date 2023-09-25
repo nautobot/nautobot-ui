@@ -15,8 +15,8 @@ export default Story;
 const MockedReactRouterLink = forwardRef<
   HTMLAnchorElement,
   HTMLProps<HTMLAnchorElement> & { to: string }
->(({ children, to, ...rest }) => (
-  <a href={to} {...rest} onClick={(event) => event.preventDefault()}>
+>(({ children, to, ...rest }, ref) => (
+  <a ref={ref} href={to} {...rest} onClick={(event) => event.preventDefault()}>
     {children}
   </a>
 ));
