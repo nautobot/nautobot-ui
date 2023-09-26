@@ -13,7 +13,18 @@ export interface SidebarButtonProps extends ButtonProps {
 }
 
 const SidebarButton = forwardRef<SidebarButtonProps, 'button'>(
-  ({ active = false, children, isFirst, isLast, level, treeEdgeProps, ...rest }, ref) => (
+  (
+    {
+      active = false,
+      children,
+      isFirst,
+      isLast,
+      level,
+      treeEdgeProps,
+      ...rest
+    },
+    ref
+  ) => (
     <Button
       ref={ref}
       _disabled={{ color: 'gray-2', pointerEvents: 'none' }}

@@ -1,7 +1,5 @@
-import {
-  Box,
-  CheckboxIconProps as ChakraCheckboxIconProps,
-} from '@chakra-ui/react';
+import { Box } from '@chakra-ui/react';
+import type { CheckboxIconProps as ChakraCheckboxIconProps } from '@chakra-ui/react';
 import React from 'react';
 
 import { CheckIcon } from '../../icons';

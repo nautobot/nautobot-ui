@@ -1,5 +1,6 @@
 import type { Meta, StoryFn } from '@storybook/react';
-import React, { ReactElement } from 'react';
+import React from 'react';
+import type { ReactElement } from 'react';
 
 import { Link } from '../..';
 import type { LinkProps } from '../..';

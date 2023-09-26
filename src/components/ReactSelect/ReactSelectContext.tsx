@@ -2,7 +2,7 @@ import type { SystemStyleObject } from '@chakra-ui/react';
 import React, { createContext, useMemo } from 'react';
 import type { ReactNode } from 'react';
 
-import { REACT_SELECT_INNER_COMPONENT_KEYS } from './constants';
+import type { REACT_SELECT_INNER_COMPONENT_KEYS } from './constants';
 
 export interface ReactSelectContextValue {
   multiValuesCropText: string;

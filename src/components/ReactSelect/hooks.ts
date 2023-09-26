@@ -2,7 +2,7 @@ import { css, useMultiStyleConfig, useTheme } from '@chakra-ui/react';
 import { useMemo } from 'react';
 import type { CSSObjectWithLabel, GroupBase, StylesConfig } from 'react-select';
 
-import { REACT_SELECT_INNER_COMPONENT_KEYS } from './constants';
+import type { REACT_SELECT_INNER_COMPONENT_KEYS } from './constants';
 import type { ReactSelectProps } from './ReactSelect';
 import ReactSelectDropdownIndicator from './ReactSelectDropdownIndicator';
 import ReactSelectLoadingIndicator from './ReactSelectLoadingIndicator';

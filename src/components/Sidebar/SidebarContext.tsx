@@ -1,4 +1,4 @@
-import { SystemStyleObject } from '@chakra-ui/react';
+import type { SystemStyleObject } from '@chakra-ui/react';
 import { createContext, useContext } from 'react';
 import type { Dispatch, SetStateAction } from 'react';
 

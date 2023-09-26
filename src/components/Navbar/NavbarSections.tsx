@@ -4,7 +4,8 @@ import React, { useContext } from 'react';
 import type { ReactElement } from 'react';
 
 import NavbarContext from './NavbarContext';
-import NavbarSection, { NavbarSectionProps } from './NavbarSection';
+import type NavbarSection from './NavbarSection';
+import type { NavbarSectionProps } from './NavbarSection';
 
 type ReactElementNavbarSection = ReactElement<
   NavbarSectionProps,
