@@ -78,7 +78,7 @@ export default defineMultiStyleConfig({
       marginTop: 'xs',
       textStyle: 'P1',
       paddingY: 'sm',
-      zIndex: 0,
+      zIndex: 'docked',
     },
 
     multiValue: {
