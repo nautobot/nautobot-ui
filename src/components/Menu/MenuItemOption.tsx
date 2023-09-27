@@ -46,7 +46,7 @@ const MenuItemOption = forwardRef<MenuItemOptionProps, 'button'>(
             ...(icon
               ? undefined
               : {
-                  '> span > span:first-child::before': {
+                  '> span > span:first-of-type::before': {
                     borderColor: 'currentcolor',
                   },
                 }),

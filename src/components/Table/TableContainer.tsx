@@ -14,7 +14,9 @@ const TableContainer = forwardRef<TableContainerProps, 'div'>((props, ref) => (
     borderRadius="md"
     borderStyle="solid"
     borderWidth={1}
-    overflow="auto"
+    overflowX="auto"
+    overflowY="auto"
+    position="relative"
     width="full"
     {...props}
   />
