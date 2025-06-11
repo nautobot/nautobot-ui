@@ -1,4 +1,6 @@
-# Nautobot UI
+# Nautobot Prototype React UI
+
+**This project is only a prototype and ultimately the Nautobot development team decided to proceed in a different direction for the Nautobot UI. It is not being actively developed or maintained.**
 
 A collection of React components for the Nautobot UI system.
 
